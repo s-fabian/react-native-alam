@@ -25,7 +25,3 @@ runs:
       if: steps.yarn-cache.outputs.cache-hit != 'true'
       run: yarn install --immutable
       shell: bash
-
-    - name: Test code
-      run: yarn test
-      shell: bash
