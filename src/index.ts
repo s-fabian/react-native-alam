@@ -15,15 +15,15 @@ const tw = {
   ...other,
 } as const;
 
-type Tw = typeof tw;
+type Alam = typeof tw;
 export type TailwindArgs = {
-  [key in keyof Tw]?: Parameters<Tw[key]>[0];
+  [key in keyof Alam]?: Parameters<Alam[key]>[0];
 };
 
 type Banned = {
   [key: string]: any;
 } & {
-  [key in keyof Tw]?: never;
+  [key in keyof Alam]?: never;
 };
 
 type Input<T extends Banned, R> = (props: T) => R;
@@ -35,7 +35,7 @@ export function setTheme(newTheme: Colors) {
   theme = newTheme;
 }
 
-export default function tailwindify<T extends Banned, R>(
+export default function alam<T extends Banned, R>(
   component: Input<T, R>
 ): Output<T, R> {
   return (props) => {
@@ -54,4 +54,4 @@ export default function tailwindify<T extends Banned, R>(
   };
 }
 
-export { Tw } from './components';
+export { Alam } from './components';

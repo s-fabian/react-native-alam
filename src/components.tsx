@@ -1,4 +1,4 @@
-import tailwindify, { type TailwindArgs } from '.';
+import alam, { type TailwindArgs } from '.';
 import {
   type DefaultSectionT,
   SafeAreaView,
@@ -31,60 +31,53 @@ import {
 } from 'react-native';
 import React from 'react';
 
-export const Tw = function () {};
+export const Alam = function () {};
 
-Tw.View = tailwindify<ViewProps, React.ReactElement>((props) => (
-  <View {...props} />
-));
-Tw.TouchableHighlight = tailwindify<
-  TouchableHighlightProps,
-  React.ReactElement
->((props) => <TouchableHighlight {...props} />);
-Tw.KeyboardAvoidingView = tailwindify<
-  KeyboardAvoidingViewProps,
-  React.ReactElement
->((props) => <KeyboardAvoidingView {...props} />);
-Tw.Text = tailwindify<TextProps, React.ReactElement>((props) => (
-  <Text {...props} />
-));
-Tw.Image = tailwindify<ImageProps, React.ReactElement>((props) => (
+Alam.View = alam<ViewProps, React.ReactElement>((props) => <View {...props} />);
+Alam.TouchableHighlight = alam<TouchableHighlightProps, React.ReactElement>(
+  (props) => <TouchableHighlight {...props} />
+);
+Alam.KeyboardAvoidingView = alam<KeyboardAvoidingViewProps, React.ReactElement>(
+  (props) => <KeyboardAvoidingView {...props} />
+);
+Alam.Text = alam<TextProps, React.ReactElement>((props) => <Text {...props} />);
+Alam.Image = alam<ImageProps, React.ReactElement>((props) => (
   <Image {...props} />
 ));
-Tw.ImageBackground = tailwindify<ImageBackgroundProps, React.ReactElement>(
+Alam.ImageBackground = alam<ImageBackgroundProps, React.ReactElement>(
   (props) => <ImageBackground {...props} />
 );
-Tw.TextInput = tailwindify<TextInputProps, React.ReactElement>((props) => (
+Alam.TextInput = alam<TextInputProps, React.ReactElement>((props) => (
   <TextInput {...props} />
 ));
-Tw.ScrollView = tailwindify<ScrollViewProps, React.ReactElement>((props) => (
+Alam.ScrollView = alam<ScrollViewProps, React.ReactElement>((props) => (
   <ScrollView {...props} />
 ));
-Tw.SafeAreaView = tailwindify<ViewProps, React.ReactElement>((props) => (
+Alam.SafeAreaView = alam<ViewProps, React.ReactElement>((props) => (
   <SafeAreaView {...props} />
 ));
-Tw.Pressable = tailwindify<PressableProps, React.ReactElement>((props) => (
+Alam.Pressable = alam<PressableProps, React.ReactElement>((props) => (
   <Pressable {...props} />
 ));
-Tw.TouchableOpacity = tailwindify<TouchableOpacityProps, React.ReactElement>(
+Alam.TouchableOpacity = alam<TouchableOpacityProps, React.ReactElement>(
   (props) => <TouchableOpacity {...props} />
 );
-Tw.TouchableWithoutFeedback = tailwindify<
+Alam.TouchableWithoutFeedback = alam<
   TouchableWithoutFeedbackProps,
   React.ReactElement
 >((props) => <TouchableWithoutFeedback {...props} />);
 
-const flatListWrap = tailwindify<FlatListProps<any>, React.ReactElement>(
-  (props) => <FlatList {...props} />
-);
-Tw.FlatList = <T extends any>(props: TailwindArgs & FlatListProps<T>) =>
+const flatListWrap = alam<FlatListProps<any>, React.ReactElement>((props) => (
+  <FlatList {...props} />
+));
+Alam.FlatList = <T extends any>(props: TailwindArgs & FlatListProps<T>) =>
   flatListWrap(props);
 
-const sectionListWrap = tailwindify<
-  SectionListProps<any, any>,
-  React.ReactElement
->((props) => <SectionList {...props} />);
-Tw.SectionList = <ItemT, SectionT = DefaultSectionT>(
+const sectionListWrap = alam<SectionListProps<any, any>, React.ReactElement>(
+  (props) => <SectionList {...props} />
+);
+Alam.SectionList = <ItemT, SectionT = DefaultSectionT>(
   props: TailwindArgs & SectionListProps<ItemT, SectionT>
 ) => sectionListWrap(props);
 
-export default Tw;
+export default Alam;

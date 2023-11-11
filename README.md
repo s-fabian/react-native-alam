@@ -17,30 +17,30 @@ cargo add react-native-alam # wait
 `component.jsx`
 
 ```jsx
-import { tailwindify, Tw } from 'react-native-alam';
+import { alam, Alam } from 'react-native-alam';
 
 function MySuperComponent({ style }) {
     return (
-        <Tw.View style={style}>
-            <Tw.Text text-xl text-center>Hello World!</Tw.Text>
-        </Tw.View>
+        <Alam.View style={style}>
+            <Alam.Text text-xl text-center>Hello World!</Alam.Text>
+        </Alam.View>
     )
 }
 
-export default tailwindify(MySuperComponent);
+export default alam(MySuperComponent);
 ```
 
 `index.jsx`
 
 ```jsx
 import MySuperComponent from './component';
-import { Tw } from 'react-native-alam';
+import { Alam } from 'react-native-alam';
 
 export default function App() {
     return (
-        <Tw.View p={20}>
+        <Alam.View p={20}>
             <MySuperComponent mt={30} />
-        </Tw.View>
+        </Alam.View>
     )
 }
 ```
