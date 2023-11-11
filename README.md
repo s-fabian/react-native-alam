@@ -20,11 +20,13 @@ cargo add react-native-alam # wait
 import { alam, Alam } from 'react-native-alam';
 
 function MySuperComponent({ style }) {
-    return (
-        <Alam.View style={style}>
-            <Alam.Text text-xl text-center>Hello World!</Alam.Text>
-        </Alam.View>
-    )
+  return (
+    <Alam.View style={style}>
+      <Alam.Text text-xl text-center>
+        Hello World!
+      </Alam.Text>
+    </Alam.View>
+  );
 }
 
 export default alam(MySuperComponent);
@@ -37,10 +39,10 @@ import MySuperComponent from './component';
 import { Alam } from 'react-native-alam';
 
 export default function App() {
-    return (
-        <Alam.View p={20}>
-            <MySuperComponent mt={30} />
-        </Alam.View>
-    )
+  return (
+    <Alam.View p={20}>
+      <MySuperComponent mt={30} />
+    </Alam.View>
+  );
 }
 ```
