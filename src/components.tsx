@@ -1,4 +1,4 @@
-import alam, { type TailwindArgs } from '.';
+import { type TailwindArgs, alam } from '.';
 import {
   type DefaultSectionT,
   SafeAreaView,
