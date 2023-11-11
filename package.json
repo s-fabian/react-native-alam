@@ -35,7 +35,10 @@
   "keywords": [
     "react-native",
     "ios",
-    "android"
+    "android",
+    "tailwind",
+    "tailwindcss",
+    "styling"
   ],
   "repository": "https://github.com/HeroClay/react-native-alam",
   "author": "Fabian <spiele2014fs@gmail.com> (https://github.com/HeroClay)",
