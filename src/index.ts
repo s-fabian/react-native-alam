@@ -35,7 +35,7 @@ export function setTheme(newTheme: Colors) {
   theme = newTheme;
 }
 
-export default function alam<T extends Banned, R>(
+export function alam<T extends Banned, R>(
   component: Input<T, R>
 ): Output<T, R> {
   return (props) => {
