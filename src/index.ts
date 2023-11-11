@@ -4,7 +4,8 @@ import other from './other';
 import position from './position';
 import font from './font';
 import colors from './colors';
-import type { Colors, Style } from './types';
+import type { Style } from './types';
+import { useTheme } from './theme';
 
 const tw = {
   ...colors,
@@ -29,20 +30,16 @@ type Banned = {
 type Input<T extends Banned, R> = (props: T) => R;
 type Output<T, R> = (props: T & TailwindArgs) => R;
 
-let theme: Colors = {};
-
-export function setTheme(newTheme: Colors) {
-  theme = newTheme;
-}
-
 export function alam<T extends Banned, R>(
   component: Input<T, R>
 ): Output<T, R> {
   return (props) => {
+    const colors = useTheme();
+
     let style: Style = {};
     for (const [key, value] of Object.entries(props)) {
       if (key in tw) {
-        style = tw[key](value, style, theme);
+        style = tw[key](value, style, colors);
         delete props[key];
       }
     }
@@ -55,3 +52,4 @@ export function alam<T extends Banned, R>(
 }
 
 export { Alam } from './components';
+export { useTheme, ThemeProvider } from './theme';
