@@ -1,9 +1,5 @@
-import {
-  type TailwindArgs,
-  type DefaultAlam,
-  type ExtendedAlam,
-  createAlam,
-} from '.';
+import { createAlam } from '.';
+import type { TailwindArgs, DefaultAlam, ExtendedAlam } from './types';
 import {
   type DefaultSectionT,
   SafeAreaView,
@@ -35,6 +31,11 @@ import {
   type TouchableWithoutFeedbackProps,
 } from 'react-native';
 import React from 'react';
+
+// type FunctionType<A extends ExtendedAlam> = <T extends Banned<A>, R>(
+//   component: Input<T, R, A>
+// ) => Output<T, R, A>;
+// type Output<T, R, A extends ExtendedAlam> = (props: T & TailwindArgs<A>) => R;
 
 interface AlamInterface<A extends ExtendedAlam> {
   View(props: TailwindArgs<A> & ViewProps): React.ReactElement;
@@ -75,7 +76,7 @@ export function createAlamComponents<A extends ExtendedAlam>(
   attr?: A
 ): AlamInterface<A> {
   const alam = attr ? createAlam(attr) : createAlam();
-  const Alam = function () {};
+  const Alam: AlamInterface<A> = function () {};
 
   Alam.View = alam<ViewProps, React.ReactElement>((props) => (
     <View {...props} />
@@ -129,7 +130,6 @@ export function createAlamComponents<A extends ExtendedAlam>(
   Alam.SectionList = <ItemT, SectionT = DefaultSectionT>(
     props: TailwindArgs<A> & TailwindArgs & SectionListProps<ItemT, SectionT>
   ) => sectionListWrap(props);
-
   return Alam;
 }
 
