@@ -14,12 +14,12 @@ cargo add react-native-alam # wait
 
 ## Usage
 
-`component.jsx`
+`component.tsx`
 
-```jsx
-import { alam, Alam } from 'react-native-alam';
+```tsx
+import { alam, Alam, type Style } from 'react-native-alam';
 
-function MySuperComponent({ style }) {
+function MySuperComponent({ style }: { style?: Style }) {
   return (
     <Alam.View style={style}>
       <Alam.Text text-xl text-center>
@@ -32,9 +32,9 @@ function MySuperComponent({ style }) {
 export default alam(MySuperComponent);
 ```
 
-`index.jsx`
+`index.tsx`
 
-```jsx
+```tsx
 import MySuperComponent from './component';
 import { Alam } from 'react-native-alam';
 
@@ -42,6 +42,48 @@ export default function App() {
   return (
     <Alam.View p={20}>
       <MySuperComponent mt={30} />
+    </Alam.View>
+  );
+}
+```
+
+## Advanced Usage
+
+`alam.tsx`
+
+```tsx
+import {
+  createAlamComponents,
+  defaultAlam,
+  type ExtendedAlam,
+  type Style,
+} from 'react-native-alam';
+
+const extended = {
+  'custom-extended': (_: true, style: Style) => ({
+    color: 'red',
+    ...style,
+  }),
+  ...defaultAlam,
+} satisfies ExtendedAlam;
+
+// The default react native components
+export const Alam = createAlamComponents(extended);
+// To extend own components with custom alam attributes
+export const alam = createAlam(extended);
+```
+
+`index.tsx`
+
+```tsx
+import { Alam } from './alam';
+
+export default function App() {
+  return (
+    <Alam.View p={20}>
+      <Alam.Text mt={30} custom-extended>
+        Red Text
+      </Alam.Text>
     </Alam.View>
   );
 }
