@@ -5,6 +5,8 @@ export default {
 
   // Flex
   flex: (flex: number, style: StyleHelp) => ({ flex, ...style }),
+  'flex-0': (_: true, style: StyleHelp) => ({ flex: 0, ...style }),
+  'flex-1': (_: true, style: StyleHelp) => ({ flex: 1, ...style }),
   basis: (flexBasis: number, style: StyleHelp) => ({ flexBasis, ...style }),
   grow: (flexGrow: true | number, style: StyleHelp) => ({
     flexGrow: flexGrow === true ? 1 : flexGrow,
