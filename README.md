@@ -88,3 +88,52 @@ export default function App() {
   );
 }
 ```
+
+## With colors
+
+`root.tsx`
+
+```tsx
+import { ThemeProvider } from 'react-native-alam';
+import { Appearance } from 'react-native';
+
+export const enum Colors {
+  Background = 'background',
+  Foreground = 'foreground',
+  Primary = 'primary',
+}
+
+export default function Root({ component }) {
+  const isDarkMode = Appearance.getColorScheme() === 'dark';
+
+  const theme: Record<Colors, string> = isDarkMode
+    ? {
+        background: '#000000',
+        foreground: '#eeeeee',
+        primary: '#eee8aa',
+      }
+    : {
+        background: '#ffffff',
+        foreground: '#111111',
+        primary: '#daa520',
+      };
+
+  return <ThemeProvider colors={theme}>{component}</ThemeProvider>;
+}
+```
+
+`index.tsx`
+
+```tsx
+import { Alam } from 'react-native-alam';
+import { Colors } from './root';
+
+export default function App() {
+  return (
+    <Alam.View bg={Colors.Background} p={20}>
+      <Alam.Text color={Colors.Primary}>Primary Text</Alam.Text>
+      <Alam.Text color={Colors.Foreground}>Foreground Text</Alam.Text>
+    </Alam.View>
+  );
+}
+```
