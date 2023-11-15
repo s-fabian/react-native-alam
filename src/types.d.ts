@@ -1,5 +1,5 @@
 import type { ImageStyle, TextStyle, ViewStyle } from 'react-native';
-import type { DefaultAlam } from 'react-native-alam';
+import type { DefaultAlam } from '.';
 
 type StyleBase = any;
 export type Style = StyleBase | ImageStyle | TextStyle | ViewStyle;
