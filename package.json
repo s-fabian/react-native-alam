@@ -40,13 +40,13 @@
     "tailwindcss",
     "styling"
   ],
-  "repository": "https://github.com/HeroClay/react-native-alam",
+  "repository": "https://github.com/s-fabian/react-native-alam",
   "author": "Fabian <spiele2014fs@gmail.com> (https://github.com/HeroClay)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/HeroClay/react-native-alam/issues"
+    "url": "https://github.com/s-fabian/react-native-alam/issues"
   },
-  "homepage": "https://github.com/HeroClay/react-native-alam#readme",
+  "homepage": "https://github.com/s-fabian/react-native-alam#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
