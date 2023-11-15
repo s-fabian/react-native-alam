@@ -67,6 +67,8 @@ for (const file of tsFiles) {
 }
 
 let readme = '# Attributes for `react-native-alam`';
+readme +=
+  '\n\nTip: Click the list icon at the to right to search for properties / alams';
 readme += '\n\n## List';
 
 for (const { name, desc, input, outputs } of found) {

@@ -1,5 +1,7 @@
 # Attributes for `react-native-alam`
 
+Tip: Click the list icon at the to right to search for properties / alams
+
 ## List
 
 ### color
