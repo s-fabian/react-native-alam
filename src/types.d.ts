@@ -1,18 +1,21 @@
 import type { ImageStyle, TextStyle, ViewStyle } from 'react-native';
+import type { DefaultAlam } from 'react-native-alam';
 
-type Style = any;
-type StyleHelp = Style | ImageStyle | TextStyle | ViewStyle;
-type Color = string;
-type Colors = Record<Color, string>;
+type StyleBase = any;
+export type Style = StyleBase | ImageStyle | TextStyle | ViewStyle;
+export type Color = string;
+export type Colors = Record<Color, string>;
 
-type DefaultAlam = typeof defaultAlam;
+export type { DefaultAlam, Style as StyleHelp };
 
-type ExtendedAlam = DefaultAlam &
+export type ExtendedAlam = DefaultAlam &
   Record<string, (arg0: any, style: Style, colors: Colors) => Style>;
 
-type TailwindArgs<A extends ExtendedAlam = DefaultAlam> = ApplyResponsive<{
-  [key in keyof A]?: Parameters<A[key]>[0];
-}>;
+export type TailwindArgs<A extends ExtendedAlam = DefaultAlam> = Partial<
+  ApplyResponsive<{
+    [key in keyof A]: Parameters<A[key]>[0] | undefined;
+  }>
+>;
 
 type StringPropertyNames<T> = {
   [K in keyof T]: K extends string ? K : never;
@@ -24,7 +27,7 @@ type ApplyResponsive<T> = {
   [K in StringPropertyNames<T> as Responsive<K>]: T[K];
 };
 
-type ResponsiveUnits = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
+export type ResponsiveUnits = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
 type ResponsiveMin<V extends string> = `${ResponsiveUnits}-${V}`;
 type ResponsiveMinMax<V extends string> =
   | ResponsiveMin<V>
@@ -36,4 +39,4 @@ type Responsive<V extends string> = ResponsiveMinMax<V> | V;
 // } & {
 //   [key in keyof DefaultAlam]?: never;
 // };
-type Banned<_> = any;
+export type Banned<_> = any;

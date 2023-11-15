@@ -6,7 +6,6 @@ import font from './font';
 import colors from './colors';
 import type {
   Banned,
-  DefaultAlam,
   ExtendedAlam,
   ResponsiveUnits,
   Style,
@@ -23,6 +22,8 @@ export const defaultAlam = {
   ...position,
   ...other,
 } as const;
+
+export type DefaultAlam = typeof defaultAlam;
 
 const breakpoints: Record<ResponsiveUnits, number> = {
   xs: 360, // Modern Smartphones, 360 pixels and above
@@ -133,4 +134,4 @@ export function createAlam<A extends ExtendedAlam>(attr?: A) {
 
 export { createAlamComponents, Alam } from './components';
 export { useTheme, ThemeProvider } from './theme';
-export type { Colors, Style } from './types';
+export type { Colors, Style, ExtendedAlam } from './types';
