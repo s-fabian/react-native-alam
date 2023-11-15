@@ -1,5 +1,7 @@
 # react-native-alam
 
+See _[here](/ATTR.md)_ for all properties / alams.
+
 A tailwind-like solution for react native
 
 ## Installation
