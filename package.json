@@ -30,7 +30,8 @@
     "clean": "del-cli lib",
     "prepare": "bob build",
     "release": "release-it",
-    "format": "prettier --write src"
+    "format": "prettier --write src",
+    "docs": "node docs.mjs"
   },
   "keywords": [
     "react-native",
