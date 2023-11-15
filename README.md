@@ -94,8 +94,7 @@ export default function App() {
 `root.tsx`
 
 ```tsx
-import { ThemeProvider } from 'react-native-alam';
-import { Appearance } from 'react-native';
+import { ThemeProvider, Appearance } from 'react-native-alam';
 
 export const enum Colors {
   Background = 'background',
