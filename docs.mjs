@@ -1,7 +1,7 @@
 import { readFile, writeFile } from 'node:fs/promises';
 
 const regex =
-  /[\s\n]*\/\/-n \w(\w|-)*[\s\n]*\/\/-d (\w).*[\s\n]*(\/\/-i \w+\s*:\s*\w+)?[\s\n]*(\/\/-o (\w|\.|\[|\])+:\s*\'?(\w|-| |%|#|\.)+\'?[\s\n]*)+/g;
+  /[\s\n]*\/\/-n \w(\w|-)*[\s\n]*\/\/-d (\w).*[\s\n]*(\/\/-i \w+\s*:\s*\w(\w| |\|)*)?[\s\n]*(\/\/-o (\w|\.|\[|\])+:\s*\'?(\w|-| |%|#|\.)+\'?[\s\n]*)+/g;
 
 const tsFiles = {
   'colors.ts': 'Color Utils',

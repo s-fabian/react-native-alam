@@ -129,6 +129,34 @@ Changes:
 }
 ```
 
+### grow
+
+Sets the flex-grow property
+
+`flexGrow: true | number`
+
+Changes:
+
+```js
+{
+  flexGrow: flexGrow
+}
+```
+
+### shrink
+
+Sets the flex-shrink property
+
+`flexShrink: true | number`
+
+Changes:
+
+```js
+{
+  flexShrink: flexShrink
+}
+```
+
 ### flex-wrap
 
 Sets wrapping of flex items
@@ -1113,6 +1141,34 @@ Changes:
 }
 ```
 
+### w
+
+Sets width
+
+`width: number | string`
+
+Changes:
+
+```js
+{
+  width: width
+}
+```
+
+### h
+
+Sets height
+
+`height: number | string`
+
+Changes:
+
+```js
+{
+  height: height
+}
+```
+
 ### w-full
 
 Sets width to '100%'
@@ -1134,6 +1190,62 @@ Changes:
 ```js
 {
   height: '100%'
+}
+```
+
+### max-w
+
+Sets maximum width
+
+`maxWidth: number | string`
+
+Changes:
+
+```js
+{
+  maxWidth: maxWidth
+}
+```
+
+### max-h
+
+Sets maximum height
+
+`maxHeight: number | string`
+
+Changes:
+
+```js
+{
+  maxHeight: maxHeight
+}
+```
+
+### min-w
+
+Sets minimum width
+
+`minWidth: number | string`
+
+Changes:
+
+```js
+{
+  minWidth: minWidth
+}
+```
+
+### min-h
+
+Sets minimum height
+
+`minHeight: number | string`
+
+Changes:
+
+```js
+{
+  minHeight: minHeight
 }
 ```
 
@@ -1402,6 +1514,20 @@ Changes:
 ```js
 {
   marginVertical: marginVertical
+}
+```
+
+### rounded
+
+Sets border radius
+
+`borderRadius: true | number`
+
+Changes:
+
+```js
+{
+  borderRadius: borderRadius
 }
 ```
 
