@@ -2,7 +2,7 @@
 
 Tip: Click the list icon at the to right to search for properties / alams
 
-## List
+## Color Utils
 
 ### color
 
@@ -62,6 +62,8 @@ Changes:
   shadowRadius: 10.0
 }
 ```
+
+## Utils for flex & co
 
 ### hidden
 
@@ -547,6 +549,8 @@ Changes:
 }
 ```
 
+## Utils for texts
+
 ### text
 
 Changes the font size of a text
@@ -935,6 +939,8 @@ Changes:
 }
 ```
 
+## Other Utils
+
 ### aspect
 
 Sets the aspect ratio
@@ -996,6 +1002,8 @@ Changes:
   direction: 'rtl'
 }
 ```
+
+## Position & Size Utils
 
 ### start
 
@@ -1142,6 +1150,8 @@ Changes:
   zIndex: zIndex
 }
 ```
+
+## Utils for margin, padding & co
 
 ### p
 
