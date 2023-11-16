@@ -82,6 +82,8 @@ export function alam<T extends Banned<A>, R, A extends ExtendedAlam>(
 
     let style: Style = {};
     for (const [key, value] of Object.entries(props)) {
+      if (value === undefined) continue;
+
       if (key in attributes) {
         style = attributes[key]!(value, style, colors);
         delete props[key];
