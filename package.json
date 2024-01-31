@@ -26,11 +26,11 @@
     "!**/.*"
   ],
   "scripts": {
-    "test": "tsc --noEmit && prettier --check src",
+    "test": "tsc --noEmit && prettier --check src docs.mjs",
     "clean": "del-cli lib",
     "prepare": "bob build",
     "release": "release-it",
-    "format": "prettier --write src",
+    "format": "prettier --write src docs.mjs",
     "docs": "node docs.mjs"
   },
   "keywords": [
