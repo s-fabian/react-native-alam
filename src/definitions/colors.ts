@@ -1,4 +1,4 @@
-import type { Color, Colors, StyleHelp } from './types';
+import type { Color, Colors, StyleHelp } from '../types';
 
 export default {
   //-n color

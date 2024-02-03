@@ -1,4 +1,4 @@
-import type { StyleHelp } from './types';
+import type { StyleHelp } from '../types';
 
 export default {
   // Padding
@@ -204,6 +204,33 @@ export default {
   //-o borderRadius: 9999
   'rounded-full': (_: true, style: StyleHelp) => ({
     borderRadius: 9999,
+    ...style,
+  }),
+
+  //-n gap
+  //-d Sets the gap between elements
+  //-i gap: number
+  //-o gap: gap
+  gap: (gap: number, style: StyleHelp) => ({
+    gap,
+    ...style,
+  }),
+
+  //-n gap-x
+  //-d Sets the gap between columns
+  //-i columnGap: number
+  //-o columnGap: columnGap
+  'gap-x': (columnGap: number, style: StyleHelp) => ({
+    columnGap,
+    ...style,
+  }),
+
+  //-n gap-y
+  //-d Sets the gap between rows
+  //-i rowGap: number
+  //-o rowGap: rowGap
+  'gap-y': (rowGap: number, style: StyleHelp) => ({
+    rowGap,
     ...style,
   }),
 } as const;

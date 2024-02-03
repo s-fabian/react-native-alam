@@ -1,4 +1,4 @@
-import type { StyleHelp } from './types';
+import type { StyleHelp } from '../types';
 
 export default {
   //-n hidden

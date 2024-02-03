@@ -126,3 +126,5 @@ export interface DefaultProps {
   'gap-x'?: number;
   'gap-y'?: number;
 }
+
+export default defaultProps;

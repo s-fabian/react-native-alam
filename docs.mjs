@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import { readFile, writeFile } from 'node:fs/promises';
 
 const regex =
@@ -16,11 +18,11 @@ let readme = '# Attributes for `react-native-alam`';
 readme +=
   '\n\nTip: Click the list icon at the to right to search for properties / alams';
 
-let dTs = 'export interface Props {';
+let dTs = 'export interface DefaultProps {';
 
 for (const fileName in tsFiles) {
   const title = tsFiles[fileName];
-  const content = await readFile(`./src/${fileName}`, 'utf8');
+  const content = await readFile(`./src/definitions/${fileName}`, 'utf8');
   const matches = content.match(regex);
 
   if (!matches) continue;
@@ -76,7 +78,7 @@ for (const fileName in tsFiles) {
   }
 
   for (const { name, input } of found) {
-    dTs += `\n  ${/[a-z]/i.test(name) ? `'${name}'` : name}: ${
+    dTs += `\n  ${/[a-z]/i.test(name) ? `'${name}'` : name}?: ${
       input ? input[1] : 'true'
     };`;
   }
@@ -106,5 +108,5 @@ for (const fileName in tsFiles) {
 dTs += '\n}\n';
 readme += '\n';
 
-await writeFile('src/props.d.ts', dTs, 'utf8');
+await writeFile('src/definitions/index.d.ts', dTs, 'utf8');
 await writeFile('ATTR.md', readme, 'utf8');

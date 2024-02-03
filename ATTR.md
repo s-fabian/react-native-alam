@@ -1578,3 +1578,45 @@ Changes:
   borderRadius: 9999
 }
 ```
+
+### gap
+
+Sets the gap between elements
+
+`gap: number`
+
+Changes:
+
+```js
+{
+  gap: gap
+}
+```
+
+### gap-x
+
+Sets the gap between columns
+
+`columnGap: number`
+
+Changes:
+
+```js
+{
+  columnGap: columnGap
+}
+```
+
+### gap-y
+
+Sets the gap between rows
+
+`rowGap: number`
+
+Changes:
+
+```js
+{
+  rowGap: rowGap
+}
+```
