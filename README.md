@@ -2,7 +2,7 @@
 
 A tailwind-like solution for react native
 
-Click _[here](/ATTR.md)_ too see all properties / alams.
+Click _[here](./ATTR.md)_ to see all properties / alams.
 
 ## Installation
 
@@ -11,15 +11,23 @@ npm install --save react-native-alam
 yarn add react-native-alam
 pnpm add react-native-alam
 bun add react-native-alam
-cargo add react-native-alam # wait
+pip install react-native-alam # wait
 ```
 
 ## Usage
 
+`alam.tsx`
+
+```tsx
+import createAlam from 'react-native-alam';
+
+export const Alam = createAlam();
+```
+
 `component.tsx`
 
 ```tsx
-import { alam, Alam, type Style } from 'react-native-alam';
+import { Alam } from './alam';
 
 function MySuperComponent({ style }: { style?: Style }) {
   return (
@@ -31,14 +39,14 @@ function MySuperComponent({ style }: { style?: Style }) {
   );
 }
 
-export default alam(MySuperComponent);
+export default Alam.convert(MySuperComponent);
 ```
 
 `index.tsx`
 
 ```tsx
 import MySuperComponent from './component';
-import { Alam } from 'react-native-alam';
+import { Alam } from './alam';
 
 export default function App() {
   return (
@@ -54,25 +62,16 @@ export default function App() {
 `alam.tsx`
 
 ```tsx
-import {
-  createAlamComponents,
-  defaultAlam,
-  type ExtendedAlam,
-  type Style,
-} from 'react-native-alam';
+import createAlam from 'react-native-alam';
 
 const extended = {
   'custom-extended': (_: true, style: Style) => ({
     color: 'red',
     ...style,
   }),
-  ...defaultAlam,
-} satisfies ExtendedAlam;
+};
 
-// The default react native components
-export const Alam = createAlamComponents(extended);
-// To extend own components with custom alam attributes
-export const alam = createAlam(extended);
+export const Alam = createAlam(extended);
 ```
 
 `index.tsx`
@@ -126,7 +125,7 @@ export default function Root({ component }) {
 `index.tsx`
 
 ```tsx
-import { Alam } from 'react-native-alam';
+import { Alam } from './alam';
 import { Colors } from './root';
 
 export default function App() {
