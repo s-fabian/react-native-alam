@@ -110,9 +110,11 @@ export function alam<T extends Banned<A>, R, A extends ExtendedAlam>(
     return component({
       ...props,
       style:
-        props instanceof Object &&
+        typeof props === 'object' &&
+        props !== null &&
         'style' in props &&
-        props.style instanceof Object
+        typeof props.style === 'object' &&
+        props.style !== null
           ? { ...props.style, ...style }
           : style,
     });
