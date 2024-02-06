@@ -74,7 +74,7 @@ export function converter<AlamProps extends Record<string, any>>(
 
         if (key in attributes) {
           style = attributes[key]!(value, style, colors);
-          delete props[key];
+          delete props[key as keyof typeof props];
         } else {
           const conditional = stripResponsive(key);
 
@@ -90,6 +90,7 @@ export function converter<AlamProps extends Record<string, any>>(
           }
 
           if (!applies) continue;
+          delete props[key as keyof typeof props];
 
           style = attributes[newKey]!(value, style, colors);
         }
