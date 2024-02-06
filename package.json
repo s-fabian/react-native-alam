@@ -1,6 +1,6 @@
 {
   "name": "react-native-alam",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "A tailwind-like solution for react native",
   "main": "src/index",
   "module": "src/index",
