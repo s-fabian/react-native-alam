@@ -26,7 +26,6 @@
   "scripts": {
     "test": "tsc --noEmit && prettier --check src docs.mjs",
     "clean": "del-cli lib",
-    "prepare": "bob build",
     "release": "release-it",
     "format": "prettier --write src docs.mjs",
     "docs": "node docs.mjs"
@@ -59,7 +58,6 @@
     "prettier": "^2.0.5",
     "react": "18.2.0",
     "react-native": "0.72.6",
-    "react-native-builder-bob": "^0.23.1",
     "release-it": "^15.0.0",
     "typescript": "^5.0.2"
   },
@@ -89,15 +87,6 @@
     },
     "github": {
       "release": true
-    },
-    "plugins": {
-      "@release-it/conventional-changelog": {
-        "preset": "angular"
-      }
     }
-  },
-  "react-native-builder-bob": {
-    "source": "src",
-    "targets": []
   }
 }
