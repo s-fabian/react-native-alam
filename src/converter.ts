@@ -42,18 +42,13 @@ function stripResponsive(
   }
 }
 
-export function converter(): FunctionType<{}>;
 export function converter<AlamProps extends Record<string, any>>(
   attr: GetFn<AlamProps>
-): FunctionType<AlamProps>;
-
-export function converter<AlamProps extends Record<string, any>>(
-  attr?: GetFn<AlamProps>
 ): FunctionType<AlamProps> {
   return <
     FunctionProps,
     ReturnType,
-    InnerAlamProps extends Record<string, any> = AlamProps,
+    InnerAlamProps extends Record<string, any> = AlamProps
   >(
     component: Input<FunctionProps, ReturnType>
   ): Output<FunctionProps, ReturnType, InnerAlamProps> => {
@@ -102,9 +97,9 @@ export function converter<AlamProps extends Record<string, any>>(
           typeof props === 'object' &&
           props !== null &&
           'style' in props &&
-          typeof props.style === 'object' &&
-          props.style !== null
-            ? { ...props.style, ...style }
+          typeof props['style'] === 'object' &&
+          props['style'] !== null
+            ? { ...props['style'], ...style }
             : style,
       });
     };

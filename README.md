@@ -21,7 +21,7 @@ pip install react-native-alam # wait
 ```tsx
 import createAlam from 'react-native-alam';
 
-export const Alam = createAlam();
+export const Alam = createAlam({});
 ```
 
 `component.tsx`

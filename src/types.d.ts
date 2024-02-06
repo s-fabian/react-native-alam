@@ -50,12 +50,12 @@ export type Input<FunctionProps, ReturnType> = (
 export type Output<
   FunctionProps,
   ReturnType,
-  AlamProps extends Record<string, any>,
+  AlamProps extends Record<string, any>
 > = (props: Finish<AlamProps> & FunctionProps) => ReturnType;
 
 export type FunctionType<AlamProps extends Record<string, any>> = <
   FunctionProps,
-  ReturnType,
+  ReturnType
 >(
   component: Input<FunctionProps, ReturnType>
 ) => Output<FunctionProps, ReturnType, AlamProps>;
