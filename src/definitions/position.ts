@@ -38,7 +38,7 @@ export default {
   //-d Sets the start position
   //-i start: number
   //-o start: start
-  start: (start: number, style: StyleHelp) => ({
+  start: (start: number | string, style: StyleHelp) => ({
     start,
     ...style,
   }),
@@ -47,7 +47,7 @@ export default {
   //-d Sets the end position
   //-i end: number
   //-o end: end
-  end: (end: number, style: StyleHelp) => ({
+  end: (end: number | string, style: StyleHelp) => ({
     end,
     ...style,
   }),
@@ -56,7 +56,7 @@ export default {
   //-d Sets the left position
   //-i left: number
   //-o left: left
-  left: (left: number, style: StyleHelp) => ({
+  left: (left: number | string, style: StyleHelp) => ({
     left,
     ...style,
   }),
@@ -65,7 +65,7 @@ export default {
   //-d Sets the right position
   //-i right: number
   //-o right: right
-  right: (right: number, style: StyleHelp) => ({
+  right: (right: number | string, style: StyleHelp) => ({
     right,
     ...style,
   }),
@@ -74,7 +74,7 @@ export default {
   //-d Sets the top position
   //-i top: number
   //-o top: top
-  top: (top: number, style: StyleHelp) => ({
+  top: (top: number | string, style: StyleHelp) => ({
     top,
     ...style,
   }),
@@ -83,7 +83,7 @@ export default {
   //-d Sets the bottom position
   //-i bottom: number
   //-o bottom: bottom
-  bottom: (bottom: number, style: StyleHelp) => ({
+  bottom: (bottom: number | string, style: StyleHelp) => ({
     bottom,
     ...style,
   }),

@@ -150,7 +150,7 @@ export function converter<AlamProps extends Record<string, any>>(
           const {
             className,
             breakpoint,
-            lowerOrLesser,
+            lowerOrLesser = 'min',
             where = 'style',
           } = conditional;
 
