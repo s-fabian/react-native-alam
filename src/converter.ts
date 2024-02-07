@@ -85,7 +85,7 @@ function makeProps<V extends PropertyKey>(
     props[key as keyof typeof props] !== null
   ) {
     if (style) {
-      return { ...props['style'], ...style }
+      return { ...props['style'], ...style };
     } else {
       return props[key as keyof typeof props];
     }
@@ -96,13 +96,8 @@ function makeProps<V extends PropertyKey>(
   }
 }
 
-export function converter(): FunctionType<{}>;
 export function converter<AlamProps extends Record<string, any>>(
   attr: GetFn<AlamProps>
-): FunctionType<AlamProps>;
-
-export function converter<AlamProps extends Record<string, any>>(
-  attr?: GetFn<AlamProps>
 ): FunctionType<AlamProps> {
   return <
     FunctionProps,

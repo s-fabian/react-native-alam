@@ -63,12 +63,10 @@ interface AlamInterface<AlamProps extends Record<string, unknown>> {
   ): (props: AlamProps & FunctionProps) => any;
 }
 
-export function createAlam(): AlamInterface<{}>;
 export function createAlam<A extends Record<string, unknown>>(
   attr: GetFn<A>
-): AlamInterface<Finish<A>>;
-export function createAlam<A extends Record<string, unknown>>(attr?: GetFn<A>) {
-  const alam = attr ? converter(attr) : converter();
+): AlamInterface<Finish<A>> {
+  const alam = converter(attr);
   const Alam: AlamInterface<Finish<A>> = function () {};
 
   Alam.View = alam<ViewProps, React.ReactElement>((props) => (
