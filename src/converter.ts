@@ -2,10 +2,11 @@ import { useWindowDimensions } from 'react-native';
 import {
   type FunctionType,
   type GetFn,
-  type Input,
-  type Output,
+  type InputFunction,
+  type OutputFunction,
   type ResponsiveUnits,
   type StyleHelp,
+  type StylePrefix,
 } from './types';
 import { type DefaultProps } from './props';
 import { useTheme } from './theme';
@@ -18,27 +19,80 @@ const breakpoints: Record<ResponsiveUnits, number> = {
   xl: 1280, // Very Large Tablets, 1280 pixels and above
 };
 
-function stripResponsive(
-  from: string,
-  is_max: boolean = false
-): [ResponsiveUnits, 'min' | 'max', string] | null {
-  const index = from.indexOf('-');
-  if (index === -1) {
-    return null;
-  }
-  const start = from.slice(0, index);
-  const end = from.slice(index + 1);
+interface StripPrefixResult {
+  where?: StylePrefix;
+  breakpoint?: ResponsiveUnits;
+  lowerOrLesser?: 'min' | 'max';
+  className?: string;
+}
 
-  switch (start) {
-    case 'sm':
-    case 'md':
-    case 'lg':
-    case 'xl':
-      return [start, is_max ? 'max' : 'min', end];
-    case 'max':
-      return is_max ? null : stripResponsive(end, true);
-    default:
-      return null;
+function stripPrefixes(from: string): StripPrefixResult | undefined {
+  const iter = from.split('-').reverse();
+
+  const result: StripPrefixResult = {};
+
+  loop: for (;;) {
+    const prefix = iter.pop();
+    if (!prefix) return;
+
+    switch (prefix) {
+      case 'max': {
+        if (result.where) return;
+        if (result.breakpoint) return;
+
+        result.lowerOrLesser = prefix;
+        break;
+      }
+
+      case 'sm':
+      case 'md':
+      case 'lg':
+      case 'xl': {
+        if (result.where) return;
+
+        result.breakpoint = prefix;
+        break;
+      }
+
+      case 'inner':
+      case 'cc': {
+        result.where = prefix;
+        break loop;
+      }
+
+      default: {
+        result.className = iter.reverse().join('-');
+        break loop;
+      }
+    }
+  }
+
+  if (!result.className) return;
+
+  return result;
+}
+
+function makeProps<V extends PropertyKey>(
+  props: unknown,
+  style: Record<string, any> | null,
+  key: V
+): Record<string, any> | undefined {
+  if (
+    typeof props === 'object' &&
+    props !== null &&
+    key in props &&
+    typeof props[key as keyof typeof props] === 'object' &&
+    props[key as keyof typeof props] !== null
+  ) {
+    if (style) {
+      return { ...props['style'], ...style }
+    } else {
+      return props[key as keyof typeof props];
+    }
+  } else if (style) {
+    return style;
+  } else {
+    return undefined;
   }
 }
 
@@ -55,8 +109,8 @@ export function converter<AlamProps extends Record<string, any>>(
     ReturnType,
     InnerAlamProps extends Record<string, any> = AlamProps,
   >(
-    component: Input<FunctionProps, ReturnType>
-  ): Output<FunctionProps, ReturnType, InnerAlamProps> => {
+    component: InputFunction<FunctionProps, ReturnType>
+  ): OutputFunction<FunctionProps, ReturnType, InnerAlamProps> => {
     const attributes = {
       ...defaultAlam,
       ...attr,
@@ -67,6 +121,9 @@ export function converter<AlamProps extends Record<string, any>>(
       const { width } = useWindowDimensions();
 
       let style: StyleHelp = {};
+      let ccStyle: StyleHelp = {};
+      let innerStyle: StyleHelp = {};
+
       for (const [key, value] of Object.entries(props) as Array<
         [string, any]
       >) {
@@ -76,36 +133,59 @@ export function converter<AlamProps extends Record<string, any>>(
           style = attributes[key]!(value, style, colors);
           delete props[key as keyof typeof props];
         } else {
-          const conditional = stripResponsive(key);
+          const conditional = stripPrefixes(key);
 
           if (!conditional) continue;
 
-          const [unit, minMax, newKey] = conditional;
-          const unitAsNumber = breakpoints[unit];
+          const {
+            className,
+            breakpoint,
+            lowerOrLesser,
+            where = 'style',
+          } = conditional;
+
+          if (!className) continue;
+
           let applies = false;
-          if (minMax === 'min') {
-            applies = width >= unitAsNumber;
-          } else if (minMax === 'max') {
-            applies = width < unitAsNumber;
+          if (breakpoint) {
+            const unitAsNumber = breakpoints[breakpoint];
+            if (lowerOrLesser === 'min') {
+              applies = width >= unitAsNumber;
+            } else if (lowerOrLesser === 'max') {
+              applies = width < unitAsNumber;
+            }
+          } else {
+            applies = true;
           }
 
           if (!applies) continue;
+          const fn = attributes[className];
+          if (!fn) continue;
+
           delete props[key as keyof typeof props];
 
-          style = attributes[newKey]!(value, style, colors);
+          switch (where) {
+            case 'style': {
+              style = fn(value, style, colors);
+              break;
+            }
+            case 'inner': {
+              innerStyle = fn(value, innerStyle, colors);
+              break;
+            }
+            case 'cc': {
+              ccStyle = fn(value, ccStyle, colors);
+              break;
+            }
+          }
         }
       }
 
       return component({
         ...props,
-        style:
-          typeof props === 'object' &&
-          props !== null &&
-          'style' in props &&
-          typeof props.style === 'object' &&
-          props.style !== null
-            ? { ...props.style, ...style }
-            : style,
+        style: makeProps(props, style, 'style'),
+        contentContainerStyle: makeProps(props, style, 'contentContainerStyle'),
+        innerStyle: makeProps(props, style, 'innerStyle'),
       });
     };
   };

@@ -27,6 +27,10 @@ export type GetFn<T extends Record<string, unknown>> = {
   ) => Style;
 };
 
+export type StylePrefix = 'inner' | 'cc';
+
+type Styled<V> = `${StylePrefix}-${V}` | V;
+
 export type ResponsiveUnits = 'sm' | 'md' | 'lg' | 'xl';
 
 type ResponsiveMin<V extends string> = `${ResponsiveUnits}-${V}`;
@@ -36,26 +40,27 @@ type ResponsiveMinMax<V extends string> =
 
 type Responsive<V extends string> = ResponsiveMinMax<V> | V;
 
-export type MakeResponsive<T extends Record<string, unknown>> = {
-  [K in keyof T as Responsive<K>]: T[K];
+export type AllPrefixes<V> = Responsive<Styled<V>>;
+
+export type AddPrefixes<T extends Record<string, unknown>> = {
+  [K in keyof T as AllPrefixes<K>]: T[K];
 };
 
-export type Finish<A extends Record<string, unknown>> = Partial<A> &
-  DefaultProps &
-  MakeResponsive<Partial<A> & DefaultProps>;
+export type AddPrefixAndDefault<A extends Record<string, unknown>> =
+  Partial<A> & DefaultProps & AddPrefixes<Partial<A> & DefaultProps>;
 
-export type Input<FunctionProps, ReturnType> = (
+export type InputFunction<FunctionProps, ReturnType> = (
   props: FunctionProps
 ) => ReturnType;
-export type Output<
+export type OutputFunction<
   FunctionProps,
   ReturnType,
   AlamProps extends Record<string, any>,
-> = (props: Finish<AlamProps> & FunctionProps) => ReturnType;
+> = (props: AddPrefixAndDefault<AlamProps> & FunctionProps) => ReturnType;
 
 export type FunctionType<AlamProps extends Record<string, any>> = <
   FunctionProps,
   ReturnType,
 >(
-  component: Input<FunctionProps, ReturnType>
-) => Output<FunctionProps, ReturnType, AlamProps>;
+  component: InputFunction<FunctionProps, ReturnType>
+) => OutputFunction<FunctionProps, ReturnType, AlamProps>;
