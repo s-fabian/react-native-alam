@@ -4,81 +4,81 @@ export default {
   // Padding
   //-n p
   //-d Sets padding for all sides
-  //-i padding: number
+  //-i padding: number | `${number}%`
   //-o padding: padding
-  p: (padding: number, style: StyleHelp) => ({
+  p: (padding: number | `${number}%`, style: StyleHelp) => ({
     padding,
     ...style,
   }),
 
   //-n pt
   //-d Sets paddingTop
-  //-i paddingTop: number
+  //-i paddingTop: number | `${number}%`
   //-o paddingTop: paddingTop
-  pt: (paddingTop: number, style: StyleHelp) => ({
+  pt: (paddingTop: number | `${number}%`, style: StyleHelp) => ({
     paddingTop,
     ...style,
   }),
 
   //-n pb
   //-d Sets paddingBottom
-  //-i paddingBottom: number
+  //-i paddingBottom: number | `${number}%`
   //-o paddingBottom: paddingBottom
-  pb: (paddingBottom: number, style: StyleHelp) => ({
+  pb: (paddingBottom: number | `${number}%`, style: StyleHelp) => ({
     paddingBottom,
     ...style,
   }),
 
   //-n pl
   //-d Sets paddingLeft
-  //-i paddingLeft: number
+  //-i paddingLeft: number | `${number}%`
   //-o paddingLeft: paddingLeft
-  pl: (paddingLeft: number, style: StyleHelp) => ({
+  pl: (paddingLeft: number | `${number}%`, style: StyleHelp) => ({
     paddingLeft,
     ...style,
   }),
 
   //-n pr
   //-d Sets paddingRight
-  //-i paddingRight: number
+  //-i paddingRight: number | `${number}%`
   //-o paddingRight: paddingRight
-  pr: (paddingRight: number, style: StyleHelp) => ({
+  pr: (paddingRight: number | `${number}%`, style: StyleHelp) => ({
     paddingRight,
     ...style,
   }),
 
   //-n ps
   //-d Sets paddingStart
-  //-i paddingStart: number
+  //-i paddingStart: number | `${number}%`
   //-o paddingStart: paddingStart
-  ps: (paddingStart: number, style: StyleHelp) => ({
+  ps: (paddingStart: number | `${number}%`, style: StyleHelp) => ({
     paddingStart,
     ...style,
   }),
 
   //-n pe
   //-d Sets paddingEnd
-  //-i paddingEnd: number
+  //-i paddingEnd: number | `${number}%`
   //-o paddingEnd: paddingEnd
-  pe: (paddingEnd: number, style: StyleHelp) => ({
+  pe: (paddingEnd: number | `${number}%`, style: StyleHelp) => ({
     paddingEnd,
     ...style,
   }),
 
   //-n px
   //-d Sets horizontal padding (left and right)
-  //-i paddingHorizontal: number
+  //-i paddingHorizontal: number | `${number}%`
   //-o paddingHorizontal: paddingHorizontal
-  px: (paddingHorizontal: number, style: StyleHelp) => ({
+  px: (paddingHorizontal: number | `${number}%`, style: StyleHelp) => ({
     paddingHorizontal,
     ...style,
   }),
 
   //-n py
   //-d Sets vertical padding (top and bottom)
-  //-i paddingVertical: number
+  //-i paddingVertical: number | `${number}%`
   //-o paddingVertical: paddingVertical
-  py: (paddingVertical: number, style: StyleHelp) => ({
+  py: (paddingVertical: number | `${number}%`, style: StyleHelp) => ({
     paddingVertical,
     ...style,
   }),
@@ -86,81 +86,81 @@ export default {
   // Margin
   //-n m
   //-d Sets margin for all sides
-  //-i margin: number
+  //-i margin: number | `${number}%`
   //-o margin: margin
-  m: (margin: number, style: StyleHelp) => ({
+  m: (margin: number | `${number}%`, style: StyleHelp) => ({
     margin,
     ...style,
   }),
 
   //-n mt
   //-d Sets margin-top
-  //-i marginTop: number
+  //-i marginTop: number | `${number}%`
   //-o marginTop: marginTop
-  mt: (marginTop: number, style: StyleHelp) => ({
+  mt: (marginTop: number | `${number}%`, style: StyleHelp) => ({
     marginTop,
     ...style,
   }),
 
   //-n mb
   //-d Sets margin-bottom
-  //-i marginBottom: number
+  //-i marginBottom: number | `${number}%`
   //-o marginBottom: marginBottom
-  mb: (marginBottom: number, style: StyleHelp) => ({
+  mb: (marginBottom: number | `${number}%`, style: StyleHelp) => ({
     marginBottom,
     ...style,
   }),
 
   //-n ml
   //-d Sets margin-left
-  //-i marginLeft: number
+  //-i marginLeft: number | `${number}%`
   //-o marginLeft: marginLeft
-  ml: (marginLeft: number, style: StyleHelp) => ({
+  ml: (marginLeft: number | `${number}%`, style: StyleHelp) => ({
     marginLeft,
     ...style,
   }),
 
   //-n mr
   //-d Sets margin-right
-  //-i marginRight: number
+  //-i marginRight: number | `${number}%`
   //-o marginRight: marginRight
-  mr: (marginRight: number, style: StyleHelp) => ({
+  mr: (marginRight: number | `${number}%`, style: StyleHelp) => ({
     marginRight,
     ...style,
   }),
 
   //-n ms
   //-d Sets margin-start
-  //-i marginStart: number
+  //-i marginStart: number | `${number}%`
   //-o marginStart: marginStart
-  ms: (marginStart: number, style: StyleHelp) => ({
+  ms: (marginStart: number | `${number}%`, style: StyleHelp) => ({
     marginStart,
     ...style,
   }),
 
   //-n me
   //-d Sets margin-end
-  //-i marginEnd: number
+  //-i marginEnd: number | `${number}%`
   //-o marginEnd: marginEnd
-  me: (marginEnd: number, style: StyleHelp) => ({
+  me: (marginEnd: number | `${number}%`, style: StyleHelp) => ({
     marginEnd,
     ...style,
   }),
 
   //-n mx
   //-d Sets horizontal margin (left and right)
-  //-i marginHorizontal: number
+  //-i marginHorizontal: number | `${number}%`
   //-o marginHorizontal: marginHorizontal
-  mx: (marginHorizontal: number, style: StyleHelp) => ({
+  mx: (marginHorizontal: number | `${number}%`, style: StyleHelp) => ({
     marginHorizontal,
     ...style,
   }),
 
   //-n my
   //-d Sets vertical margin (top and bottom)
-  //-i marginVertical: number
+  //-i marginVertical: number | `${number}%`
   //-o marginVertical: marginVertical
-  my: (marginVertical: number, style: StyleHelp) => ({
+  my: (marginVertical: number | `${number}%`, style: StyleHelp) => ({
     marginVertical,
     ...style,
   }),

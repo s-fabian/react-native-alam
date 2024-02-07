@@ -58,8 +58,23 @@ Changes:
   [shadowOffset.width]: 0,
   [shadowOffset.height]: 2.6,
   shadowOpacity: 0.1,
-  shadowOpacity: 0.1,
   shadowRadius: 10.0
+}
+```
+
+### shadow-md
+
+Add a shadow to the element
+
+Changes:
+
+```js
+{
+  shadowColor: '#000000',
+  [shadowOffset.width]: 3,
+  [shadowOffset.height]: 3,
+  shadowOpacity: 0.12,
+  shadowRadius: 5
 }
 ```
 
@@ -1037,7 +1052,7 @@ Changes:
 
 Sets the start position
 
-`start: number`
+`start: number | `${number}%``
 
 Changes:
 
@@ -1051,7 +1066,7 @@ Changes:
 
 Sets the end position
 
-`end: number`
+`end: number | `${number}%``
 
 Changes:
 
@@ -1065,7 +1080,7 @@ Changes:
 
 Sets the left position
 
-`left: number`
+`left: number | `${number}%``
 
 Changes:
 
@@ -1079,7 +1094,7 @@ Changes:
 
 Sets the right position
 
-`right: number`
+`right: number | `${number}%``
 
 Changes:
 
@@ -1093,7 +1108,7 @@ Changes:
 
 Sets the top position
 
-`top: number`
+`top: number | `${number}%``
 
 Changes:
 
@@ -1107,7 +1122,7 @@ Changes:
 
 Sets the bottom position
 
-`bottom: number`
+`bottom: number | `${number}%``
 
 Changes:
 
@@ -1145,7 +1160,7 @@ Changes:
 
 Sets width
 
-`width: number | string`
+`width: number | `${number}%``
 
 Changes:
 
@@ -1159,7 +1174,7 @@ Changes:
 
 Sets height
 
-`height: number | string`
+`height: number | `${number}%``
 
 Changes:
 
@@ -1197,7 +1212,7 @@ Changes:
 
 Sets maximum width
 
-`maxWidth: number | string`
+`maxWidth: number | `${number}%``
 
 Changes:
 
@@ -1211,7 +1226,7 @@ Changes:
 
 Sets maximum height
 
-`maxHeight: number | string`
+`maxHeight: number | `${number}%``
 
 Changes:
 
@@ -1225,7 +1240,7 @@ Changes:
 
 Sets minimum width
 
-`minWidth: number | string`
+`minWidth: number | `${number}%``
 
 Changes:
 
@@ -1239,7 +1254,7 @@ Changes:
 
 Sets minimum height
 
-`minHeight: number | string`
+`minHeight: number | `${number}%``
 
 Changes:
 
@@ -1269,7 +1284,7 @@ Changes:
 
 Sets padding for all sides
 
-`padding: number`
+`padding: number | `${number}%``
 
 Changes:
 
@@ -1283,7 +1298,7 @@ Changes:
 
 Sets paddingTop
 
-`paddingTop: number`
+`paddingTop: number | `${number}%``
 
 Changes:
 
@@ -1297,7 +1312,7 @@ Changes:
 
 Sets paddingBottom
 
-`paddingBottom: number`
+`paddingBottom: number | `${number}%``
 
 Changes:
 
@@ -1311,7 +1326,7 @@ Changes:
 
 Sets paddingLeft
 
-`paddingLeft: number`
+`paddingLeft: number | `${number}%``
 
 Changes:
 
@@ -1325,7 +1340,7 @@ Changes:
 
 Sets paddingRight
 
-`paddingRight: number`
+`paddingRight: number | `${number}%``
 
 Changes:
 
@@ -1339,7 +1354,7 @@ Changes:
 
 Sets paddingStart
 
-`paddingStart: number`
+`paddingStart: number | `${number}%``
 
 Changes:
 
@@ -1353,7 +1368,7 @@ Changes:
 
 Sets paddingEnd
 
-`paddingEnd: number`
+`paddingEnd: number | `${number}%``
 
 Changes:
 
@@ -1367,7 +1382,7 @@ Changes:
 
 Sets horizontal padding (left and right)
 
-`paddingHorizontal: number`
+`paddingHorizontal: number | `${number}%``
 
 Changes:
 
@@ -1381,7 +1396,7 @@ Changes:
 
 Sets vertical padding (top and bottom)
 
-`paddingVertical: number`
+`paddingVertical: number | `${number}%``
 
 Changes:
 
@@ -1395,7 +1410,7 @@ Changes:
 
 Sets margin for all sides
 
-`margin: number`
+`margin: number | `${number}%``
 
 Changes:
 
@@ -1409,7 +1424,7 @@ Changes:
 
 Sets margin-top
 
-`marginTop: number`
+`marginTop: number | `${number}%``
 
 Changes:
 
@@ -1423,7 +1438,7 @@ Changes:
 
 Sets margin-bottom
 
-`marginBottom: number`
+`marginBottom: number | `${number}%``
 
 Changes:
 
@@ -1437,7 +1452,7 @@ Changes:
 
 Sets margin-left
 
-`marginLeft: number`
+`marginLeft: number | `${number}%``
 
 Changes:
 
@@ -1451,7 +1466,7 @@ Changes:
 
 Sets margin-right
 
-`marginRight: number`
+`marginRight: number | `${number}%``
 
 Changes:
 
@@ -1465,7 +1480,7 @@ Changes:
 
 Sets margin-start
 
-`marginStart: number`
+`marginStart: number | `${number}%``
 
 Changes:
 
@@ -1479,7 +1494,7 @@ Changes:
 
 Sets margin-end
 
-`marginEnd: number`
+`marginEnd: number | `${number}%``
 
 Changes:
 
@@ -1493,7 +1508,7 @@ Changes:
 
 Sets horizontal margin (left and right)
 
-`marginHorizontal: number`
+`marginHorizontal: number | `${number}%``
 
 Changes:
 
@@ -1507,7 +1522,7 @@ Changes:
 
 Sets vertical margin (top and bottom)
 
-`marginVertical: number`
+`marginVertical: number | `${number}%``
 
 Changes:
 

@@ -31,7 +31,6 @@ export default {
   //-o [shadowOffset.width]: 0
   //-o [shadowOffset.height]: 2.6
   //-o shadowOpacity: 0.1
-  //-o shadowOpacity: 0.1
   //-o shadowRadius: 10.0
   shadow: (_: true, style: StyleHelp) => ({
     shadowColor: '#000000',
@@ -41,6 +40,23 @@ export default {
     },
     shadowOpacity: 0.1,
     shadowRadius: 10.0,
+    ...style,
+  }),
+  //-n shadow-md
+  //-d Add a shadow to the element
+  //-o shadowColor: '#000000'
+  //-o [shadowOffset.width]: 3
+  //-o [shadowOffset.height]: 3
+  //-o shadowOpacity: 0.12
+  //-o shadowRadius: 5
+  'shadow-md': (_: true, style: StyleHelp) => ({
+    shadowColor: '#000000',
+    shadowOffset: {
+      width: 3,
+      height: 3,
+    },
+    shadowOpacity: 0.12,
+    shadowRadius: 5,
     ...style,
   }),
 };

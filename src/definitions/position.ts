@@ -36,54 +36,54 @@ export default {
 
   //-n start
   //-d Sets the start position
-  //-i start: number
+  //-i start: number | `${number}%`
   //-o start: start
-  start: (start: number | string, style: StyleHelp) => ({
+  start: (start: number | `${number}%`, style: StyleHelp) => ({
     start,
     ...style,
   }),
 
   //-n end
   //-d Sets the end position
-  //-i end: number
+  //-i end: number | `${number}%`
   //-o end: end
-  end: (end: number | string, style: StyleHelp) => ({
+  end: (end: number | `${number}%`, style: StyleHelp) => ({
     end,
     ...style,
   }),
 
   //-n left
   //-d Sets the left position
-  //-i left: number
+  //-i left: number | `${number}%`
   //-o left: left
-  left: (left: number | string, style: StyleHelp) => ({
+  left: (left: number | `${number}%`, style: StyleHelp) => ({
     left,
     ...style,
   }),
 
   //-n right
   //-d Sets the right position
-  //-i right: number
+  //-i right: number | `${number}%`
   //-o right: right
-  right: (right: number | string, style: StyleHelp) => ({
+  right: (right: number | `${number}%`, style: StyleHelp) => ({
     right,
     ...style,
   }),
 
   //-n top
   //-d Sets the top position
-  //-i top: number
+  //-i top: number | `${number}%`
   //-o top: top
-  top: (top: number | string, style: StyleHelp) => ({
+  top: (top: number | `${number}%`, style: StyleHelp) => ({
     top,
     ...style,
   }),
 
   //-n bottom
   //-d Sets the bottom position
-  //-i bottom: number
+  //-i bottom: number | `${number}%`
   //-o bottom: bottom
-  bottom: (bottom: number | string, style: StyleHelp) => ({
+  bottom: (bottom: number | `${number}%`, style: StyleHelp) => ({
     bottom,
     ...style,
   }),
@@ -108,18 +108,18 @@ export default {
   // width and height
   //-n w
   //-d Sets width
-  //-i width: number | string
+  //-i width: number | `${number}%`
   //-o width: width
-  w: (width: number | string, style: StyleHelp) => ({
+  w: (width: number | `${number}%`, style: StyleHelp) => ({
     width,
     ...style,
   }),
 
   //-n h
   //-d Sets height
-  //-i height: number | string
+  //-i height: number | `${number}%`
   //-o height: height
-  h: (height: number | string, style: StyleHelp) => ({
+  h: (height: number | `${number}%`, style: StyleHelp) => ({
     height,
     ...style,
   }),
@@ -142,36 +142,36 @@ export default {
 
   //-n max-w
   //-d Sets maximum width
-  //-i maxWidth: number | string
+  //-i maxWidth: number | `${number}%`
   //-o maxWidth: maxWidth
-  'max-w': (maxWidth: number | string, style: StyleHelp) => ({
+  'max-w': (maxWidth: number | `${number}%`, style: StyleHelp) => ({
     maxWidth,
     ...style,
   }),
 
   //-n max-h
   //-d Sets maximum height
-  //-i maxHeight: number | string
+  //-i maxHeight: number | `${number}%`
   //-o maxHeight: maxHeight
-  'max-h': (maxHeight: number | string, style: StyleHelp) => ({
+  'max-h': (maxHeight: number | `${number}%`, style: StyleHelp) => ({
     maxHeight,
     ...style,
   }),
 
   //-n min-w
   //-d Sets minimum width
-  //-i minWidth: number | string
+  //-i minWidth: number | `${number}%`
   //-o minWidth: minWidth
-  'min-w': (minWidth: number | string, style: StyleHelp) => ({
+  'min-w': (minWidth: number | `${number}%`, style: StyleHelp) => ({
     minWidth,
     ...style,
   }),
 
   //-n min-h
   //-d Sets minimum height
-  //-i minHeight: number | string
+  //-i minHeight: number | `${number}%`
   //-o minHeight: minHeight
-  'min-h': (minHeight: number | string, style: StyleHelp) => ({
+  'min-h': (minHeight: number | `${number}%`, style: StyleHelp) => ({
     minHeight,
     ...style,
   }),

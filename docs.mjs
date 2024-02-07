@@ -3,7 +3,7 @@
 import { readFile, writeFile } from 'node:fs/promises';
 
 const regex =
-  /[\s\n]*\/\/-n \w(\w|-)*[\s\n]*\/\/-d (\w).*[\s\n]*(\/\/-i \w+\s*:\s*\w(\w| |\|)*)?[\s\n]*(\/\/-o (\w|\.|\[|\])+:\s*\'?(\w|-| |%|#|\.)+\'?[\s\n]*)+/g;
+  /[\s\n]*\/\/-n \w(\w|-)*[\s\n]*\/\/-d (\w).*[\s\n]*(\/\/-i \w+\s*:\s*\w(\w|`|\{|}|\$|%| |\|)*)?[\s\n]*(\/\/-o (\w|\.|\[|])+:\s*\'?(\w|-| |%|#|\.)+'?[\s\n]*)+/g;
 
 const tsFiles = {
   'colors.ts': 'Color Utils',
@@ -77,7 +77,11 @@ for (const fileName in tsFiles) {
     found.push({ name, desc, input, outputs });
   }
 
-  for (const { name, input } of found) {
+  for (const { name, input, desc } of found) {
+    if (desc) {
+      dTs += `\n  // ${desc}`;
+    }
+
     dTs += `\n  ${/^[a-z]+$/i.test(name) ? name : `'${name}'`}?: ${
       input ? input[1] : 'true'
     };`;
