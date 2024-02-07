@@ -22,26 +22,29 @@ export default {
   //-o flex: 1
   'flex-1': (_: true, style: StyleHelp) => ({ flex: 1, ...style }),
 
-  //-n basis
+  //-n flex-basis
   //-d Sets the flex-basis property
   //-i flexBasis: number
   //-o flexBasis: flexBasis
-  basis: (flexBasis: number, style: StyleHelp) => ({ flexBasis, ...style }),
+  'flex-basis': (flexBasis: number, style: StyleHelp) => ({
+    flexBasis,
+    ...style,
+  }),
 
-  //-n grow
+  //-n flex-grow
   //-d Sets the flex-grow property
   //-i flexGrow: true | number
   //-o flexGrow: flexGrow === true ? 1 : flexGrow
-  grow: (flexGrow: true | number, style: StyleHelp) => ({
+  'flex-grow': (flexGrow: true | number, style: StyleHelp) => ({
     flexGrow: flexGrow === true ? 1 : flexGrow,
     ...style,
   }),
 
-  //-n shrink
+  //-n flex-shrink
   //-d Sets the flex-shrink property
   //-i flexShrink: true | number
   //-o flexShrink: flexShrink === true ? 1 : flexShrink
-  shrink: (flexShrink: true | number, style: StyleHelp) => ({
+  'flex-shrink': (flexShrink: true | number, style: StyleHelp) => ({
     flexShrink: flexShrink === true ? 1 : flexShrink,
     ...style,
   }),

@@ -7,9 +7,9 @@ export interface DefaultProps {
   flex?: number;
   'flex-0'?: true;
   'flex-1'?: true;
-  basis?: number;
-  grow?: true | number;
-  shrink?: true | number;
+  'flex-basis'?: number;
+  'flex-grow'?: true | number;
+  'flex-shrink'?: true | number;
   'flex-wrap'?: true;
   'flex-nowrap'?: true;
   'flex-row'?: true;
@@ -126,5 +126,3 @@ export interface DefaultProps {
   'gap-x'?: number;
   'gap-y'?: number;
 }
-
-export default defaultProps;
