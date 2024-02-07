@@ -8,7 +8,7 @@ import {
   type StyleHelp,
   type StylePrefix,
 } from './types';
-import { type DefaultProps } from './props';
+import { type DefaultProps } from './definitions';
 import { useTheme } from './theme';
 import defaultAlam from './definitions';
 

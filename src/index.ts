@@ -7,4 +7,4 @@ export type {
   GetProps,
   AddPrefixAndDefault,
 } from './types';
-export type { DefaultProps } from './props';
+export type { DefaultProps } from './definitions';
