@@ -78,7 +78,7 @@ for (const fileName in tsFiles) {
   }
 
   for (const { name, input } of found) {
-    dTs += `\n  ${/[a-z]/i.test(name) ? `'${name}'` : name}?: ${
+    dTs += `\n  ${/^[a-z]+$/i.test(name) ? name : `'${name}'`}?: ${
       input ? input[1] : 'true'
     };`;
   }

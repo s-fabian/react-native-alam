@@ -115,7 +115,7 @@ Changes:
 }
 ```
 
-### basis
+### flex-basis
 
 Sets the flex-basis property
 
@@ -129,7 +129,7 @@ Changes:
 }
 ```
 
-### grow
+### flex-grow
 
 Sets the flex-grow property
 
@@ -143,7 +143,7 @@ Changes:
 }
 ```
 
-### shrink
+### flex-shrink
 
 Sets the flex-shrink property
 

@@ -1,4 +1,4 @@
-import type { Finish, GetFn } from './types';
+import type { AddPrefixAndDefault, GetFn } from './types';
 import {
   type DefaultSectionT,
   SafeAreaView,
@@ -65,9 +65,9 @@ interface AlamInterface<AlamProps extends Record<string, unknown>> {
 
 export function createAlam<A extends Record<string, unknown>>(
   attr: GetFn<A>
-): AlamInterface<Finish<A>> {
+): AlamInterface<AddPrefixAndDefault<A>> {
   const alam = converter(attr);
-  const Alam: AlamInterface<Finish<A>> = function () {};
+  const Alam: AlamInterface<AddPrefixAndDefault<A>> = function () {};
 
   Alam.View = alam<ViewProps, React.ReactElement>((props) => (
     <View {...props} />
@@ -111,14 +111,15 @@ export function createAlam<A extends Record<string, unknown>>(
   const flatListWrap = alam<FlatListProps<any>, React.ReactElement>((props) => (
     <FlatList {...props} />
   ));
-  Alam.FlatList = <T extends any>(props: Finish<A> & FlatListProps<T>) =>
-    flatListWrap(props);
+  Alam.FlatList = <T extends any>(
+    props: AddPrefixAndDefault<A> & FlatListProps<T>
+  ) => flatListWrap(props);
 
   const sectionListWrap = alam<SectionListProps<any, any>, React.ReactElement>(
     (props) => <SectionList {...props} />
   );
   Alam.SectionList = <ItemT, SectionT = DefaultSectionT>(
-    props: Finish<A> & SectionListProps<ItemT, SectionT>
+    props: AddPrefixAndDefault<A> & SectionListProps<ItemT, SectionT>
   ) => sectionListWrap(props);
 
   Alam.convert = alam;

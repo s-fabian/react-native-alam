@@ -26,7 +26,7 @@ interface StripPrefixResult {
   className?: string;
 }
 
-function stripPrefixes(from: string): StripPrefixResult | undefined {
+function getPrefix(from: string): StripPrefixResult | undefined {
   const iter = from.split('-').reverse();
 
   const result: StripPrefixResult = {};
@@ -37,8 +37,13 @@ function stripPrefixes(from: string): StripPrefixResult | undefined {
 
     switch (prefix) {
       case 'max': {
-        if (result.where) return;
-        if (result.breakpoint) return;
+        if (result.where || result.breakpoint) {
+          result.className = iter.length
+            ? prefix + '-' + iter.reverse().join('-')
+            : prefix;
+
+          break loop;
+        }
 
         result.lowerOrLesser = prefix;
         break;
@@ -48,7 +53,13 @@ function stripPrefixes(from: string): StripPrefixResult | undefined {
       case 'md':
       case 'lg':
       case 'xl': {
-        if (result.where) return;
+        if (result.where) {
+          result.className = iter.length
+            ? prefix + '-' + iter.reverse().join('-')
+            : prefix;
+
+          break loop;
+        }
 
         result.breakpoint = prefix;
         break;
@@ -57,11 +68,14 @@ function stripPrefixes(from: string): StripPrefixResult | undefined {
       case 'inner':
       case 'cc': {
         result.where = prefix;
+        result.className = iter.reverse().join('-');
         break loop;
       }
 
       default: {
-        result.className = iter.reverse().join('-');
+        result.className = iter.length
+          ? prefix + '-' + iter.reverse().join('-')
+          : prefix;
         break loop;
       }
     }
@@ -123,12 +137,13 @@ export function converter<AlamProps extends Record<string, any>>(
         [string, any]
       >) {
         if (value === undefined) continue;
+        if (typeof value === 'function') continue;
 
         if (key in attributes) {
           style = attributes[key]!(value, style, colors);
           delete props[key as keyof typeof props];
         } else {
-          const conditional = stripPrefixes(key);
+          const conditional = getPrefix(key);
 
           if (!conditional) continue;
 
@@ -176,12 +191,18 @@ export function converter<AlamProps extends Record<string, any>>(
         }
       }
 
-      return component({
+      const result = {
         ...props,
         style: makeProps(props, style, 'style'),
-        contentContainerStyle: makeProps(props, style, 'contentContainerStyle'),
-        innerStyle: makeProps(props, style, 'innerStyle'),
-      });
+        contentContainerStyle: makeProps(
+          props,
+          ccStyle,
+          'contentContainerStyle'
+        ),
+        innerStyle: makeProps(props, innerStyle, 'innerStyle'),
+      };
+
+      return component(result);
     };
   };
 }
