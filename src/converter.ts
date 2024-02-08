@@ -99,7 +99,7 @@ function makeProps<V extends PropertyKey>(
     props[key as keyof typeof props] !== null
   ) {
     if (style) {
-      return { ...props['style'], ...style };
+      return { ...(props as { style: any })['style'], ...style };
     } else {
       return props[key as keyof typeof props];
     }
