@@ -165,48 +165,6 @@ export default {
     ...style,
   }),
 
-  // borderRadius
-  //-n rounded
-  //-d Sets border radius
-  //-i borderRadius: true | number
-  //-o borderRadius: borderRadius === true ? 10 : borderRadius
-  rounded: (borderRadius: true | number, style: StyleHelp) => ({
-    borderRadius: borderRadius === true ? 10 : borderRadius,
-    ...style,
-  }),
-
-  //-n rounded-md
-  //-d Sets border radius to medium
-  //-o borderRadius: 15
-  'rounded-md': (_: true, style: StyleHelp) => ({
-    borderRadius: 15,
-    ...style,
-  }),
-
-  //-n rounded-lg
-  //-d Sets border radius to large
-  //-o borderRadius: 20
-  'rounded-lg': (_: true, style: StyleHelp) => ({
-    borderRadius: 20,
-    ...style,
-  }),
-
-  //-n rounded-xl
-  //-d Sets border radius to extra large
-  //-o borderRadius: 30
-  'rounded-xl': (_: true, style: StyleHelp) => ({
-    borderRadius: 30,
-    ...style,
-  }),
-
-  //-n rounded-full
-  //-d Sets border radius to full circle
-  //-o borderRadius: 9999
-  'rounded-full': (_: true, style: StyleHelp) => ({
-    borderRadius: 9999,
-    ...style,
-  }),
-
   //-n gap
   //-d Sets the gap between elements
   //-i gap: number

@@ -1532,6 +1532,50 @@ Changes:
 }
 ```
 
+### gap
+
+Sets the gap between elements
+
+`gap: number`
+
+Changes:
+
+```js
+{
+  gap: gap
+}
+```
+
+### gap-x
+
+Sets the gap between columns
+
+`columnGap: number`
+
+Changes:
+
+```js
+{
+  columnGap: columnGap
+}
+```
+
+### gap-y
+
+Sets the gap between rows
+
+`rowGap: number`
+
+Changes:
+
+```js
+{
+  rowGap: rowGap
+}
+```
+
+## Utils for borders
+
 ### rounded
 
 Sets border radius
@@ -1594,44 +1638,172 @@ Changes:
 }
 ```
 
-### gap
+### rounded-tl
 
-Sets the gap between elements
+Sets border radius for the top-left corner
 
-`gap: number`
+`borderTopLeftRadius: number`
 
 Changes:
 
 ```js
 {
-  gap: gap
+  borderTopLeftRadius: borderTopLeftRadius
 }
 ```
 
-### gap-x
+### rounded-tr
 
-Sets the gap between columns
+Sets border radius for the top-right corner
 
-`columnGap: number`
+`borderTopRightRadius: number`
 
 Changes:
 
 ```js
 {
-  columnGap: columnGap
+  borderTopRightRadius: borderTopRightRadius
 }
 ```
 
-### gap-y
+### rounded-bl
 
-Sets the gap between rows
+Sets border radius for the bottom-left corner
 
-`rowGap: number`
+`borderBottomLeftRadius: number`
 
 Changes:
 
 ```js
 {
-  rowGap: rowGap
+  borderBottomLeftRadius: borderBottomLeftRadius
+}
+```
+
+### rounded-br
+
+Sets border radius for the bottom-right corner
+
+`borderBottomRightRadius: number`
+
+Changes:
+
+```js
+{
+  borderBottomRightRadius: borderBottomRightRadius
+}
+```
+
+### border
+
+Sets the width of the border
+
+`borderWidth: number`
+
+Changes:
+
+```js
+{
+  borderWidth: borderWidth
+}
+```
+
+### border-x
+
+Sets the width of the border on the left & right side
+
+`borderWidth: number`
+
+Changes:
+
+```js
+{
+  borderLeftWidth: borderWidth,
+  borderRightWidth: borderWidth
+}
+```
+
+### border-y
+
+Sets the width of the border on the top & bottom side
+
+`borderWidth: number`
+
+Changes:
+
+```js
+{
+  borderTopWidth: borderWidth,
+  borderBottomWidth: borderWidth
+}
+```
+
+### border-l
+
+Sets the width of the border on the left side
+
+`borderLeftWidth: number`
+
+Changes:
+
+```js
+{
+  borderLeftWidth: borderLeftWidth
+}
+```
+
+### border-r
+
+Sets the width of the border on the right side
+
+`borderRightWidth: number`
+
+Changes:
+
+```js
+{
+  borderRightWidth: borderRightWidth
+}
+```
+
+### border-t
+
+Sets the width of the border on the top side
+
+`borderTopWidth: number`
+
+Changes:
+
+```js
+{
+  borderTopWidth: borderTopWidth
+}
+```
+
+### border-b
+
+Sets the width of the border on the bottom side
+
+`borderBottomWidth: number`
+
+Changes:
+
+```js
+{
+  borderBottomWidth: borderBottomWidth
+}
+```
+
+### border-color
+
+Sets the color of the border
+
+`borderColor: string`
+
+Changes:
+
+```js
+{
+  borderColor: colors
 }
 ```

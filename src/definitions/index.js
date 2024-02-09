@@ -9,6 +9,7 @@ import { default as other } from './other';
 import { default as position } from './position';
 
 import { default as spacing } from './spacing';
+import { default as border } from './border';
 
 export default {
   ...colors,
@@ -16,5 +17,6 @@ export default {
   ...spacing,
   ...display,
   ...position,
+  ...border,
   ...other,
 };

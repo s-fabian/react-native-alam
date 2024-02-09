@@ -237,6 +237,12 @@ export interface DefaultProps {
   mx?: number | `${number}%`;
   // Sets vertical margin (top and bottom)
   my?: number | `${number}%`;
+  // Sets the gap between elements
+  gap?: number;
+  // Sets the gap between columns
+  'gap-x'?: number;
+  // Sets the gap between rows
+  'gap-y'?: number;
   // Sets border radius
   rounded?: true | number;
   // Sets border radius to medium
@@ -247,10 +253,28 @@ export interface DefaultProps {
   'rounded-xl'?: true;
   // Sets border radius to full circle
   'rounded-full'?: true;
-  // Sets the gap between elements
-  gap?: number;
-  // Sets the gap between columns
-  'gap-x'?: number;
-  // Sets the gap between rows
-  'gap-y'?: number;
+  // Sets border radius for the top-left corner
+  'rounded-tl'?: number;
+  // Sets border radius for the top-right corner
+  'rounded-tr'?: number;
+  // Sets border radius for the bottom-left corner
+  'rounded-bl'?: number;
+  // Sets border radius for the bottom-right corner
+  'rounded-br'?: number;
+  // Sets the width of the border
+  border?: number;
+  // Sets the width of the border on the left & right side
+  'border-x'?: number;
+  // Sets the width of the border on the top & bottom side
+  'border-y'?: number;
+  // Sets the width of the border on the left side
+  'border-l'?: number;
+  // Sets the width of the border on the right side
+  'border-r'?: number;
+  // Sets the width of the border on the top side
+  'border-t'?: number;
+  // Sets the width of the border on the bottom side
+  'border-b'?: number;
+  // Sets the color of the border
+  'border-color'?: string;
 }

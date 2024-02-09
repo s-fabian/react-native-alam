@@ -12,6 +12,7 @@ const tsFiles = {
   'other.ts': 'Other Utils',
   'position.ts': 'Position & Size Utils',
   'spacing.ts': 'Utils for margin, padding & co',
+  'border.ts': 'Utils for borders',
 };
 
 let readme = '# Attributes for `react-native-alam`';
