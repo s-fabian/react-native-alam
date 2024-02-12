@@ -31,4 +31,28 @@ export default {
   //-d Changes the direction to right-to-left
   //-o direction: 'rtl'
   'dir-rtl': (_: true, style: StyleHelp) => ({ direction: 'rtl', ...style }),
+
+  //-n overflow-visible
+  //-d Changes overflow / how the element is measured and displayed
+  //-o overflow: 'visible'
+  'overflow-visible': (_: true, style: StyleHelp) => ({
+    overflow: 'visible',
+    ...style,
+  }),
+
+  //-n overflow-hidden
+  //-d Changes overflow / how the element is measured and displayed
+  //-o overflow: 'hidden'
+  'overflow-hidden': (_: true, style: StyleHelp) => ({
+    overflow: 'hidden',
+    ...style,
+  }),
+
+  //-n overflow-scroll
+  //-d Changes overflow / how the element is measured and displayed
+  //-o overflow: 'scroll'
+  'overflow-scroll': (_: true, style: StyleHelp) => ({
+    overflow: 'scroll',
+    ...style,
+  }),
 };

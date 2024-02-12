@@ -167,6 +167,12 @@ export interface DefaultProps {
   'dir-ltr'?: true;
   // Changes the direction to right-to-left
   'dir-rtl'?: true;
+  // Changes overflow / how the element is measured and displayed
+  'overflow-visible'?: true;
+  // Changes overflow / how the element is measured and displayed
+  'overflow-hidden'?: true;
+  // Changes overflow / how the element is measured and displayed
+  'overflow-scroll'?: true;
   // Sets the start position
   start?: number | `${number}%`;
   // Sets the end position

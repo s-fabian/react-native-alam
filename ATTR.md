@@ -1046,6 +1046,42 @@ Changes:
 }
 ```
 
+### overflow-visible
+
+Changes overflow / how the element is measured and displayed
+
+Changes:
+
+```js
+{
+  overflow: 'visible'
+}
+```
+
+### overflow-hidden
+
+Changes overflow / how the element is measured and displayed
+
+Changes:
+
+```js
+{
+  overflow: 'hidden'
+}
+```
+
+### overflow-scroll
+
+Changes overflow / how the element is measured and displayed
+
+Changes:
+
+```js
+{
+  overflow: 'scroll'
+}
+```
+
 ## Position & Size Utils
 
 ### start
