@@ -39,7 +39,6 @@ export default {
     overflow: 'visible',
     ...style,
   }),
-
   //-n overflow-hidden
   //-d Changes overflow / how the element is measured and displayed
   //-o overflow: 'hidden'
@@ -47,7 +46,6 @@ export default {
     overflow: 'hidden',
     ...style,
   }),
-
   //-n overflow-scroll
   //-d Changes overflow / how the element is measured and displayed
   //-o overflow: 'scroll'
