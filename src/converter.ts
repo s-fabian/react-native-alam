@@ -120,7 +120,7 @@ export function converter<AlamProps extends Record<string, any>>(
   return <
     FunctionProps,
     ReturnType,
-    InnerAlamProps extends Record<string, any> = AlamProps,
+    InnerAlamProps extends Record<string, any> = AlamProps
   >(
     component: InputFunction<FunctionProps, ReturnType>
   ): OutputFunction<FunctionProps, ReturnType, InnerAlamProps> => {
