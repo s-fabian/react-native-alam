@@ -8,9 +8,8 @@ import {
   type StyleHelp,
   type StylePrefix,
 } from './types';
-import { type DefaultProps } from './definitions';
+import defaultAlam, { type DefaultProps } from './definitions';
 import { useTheme } from './theme';
-import defaultAlam from './definitions';
 import { Important } from './components';
 
 const breakpoints: Record<ResponsiveUnits, number> = {
@@ -100,13 +99,11 @@ function makeProps<V extends PropertyKey>(
     props[key as keyof typeof props] !== null
   ) {
     if (style) {
-      const styleImportant = props[Important] !== undefined;
+      const styleImportant = props['style'][Important] !== undefined;
 
-      if (styleImportant) {
-        return { ...style, ...(props as { style: any })['style'] };
-      } else {
-        return { ...(props as { style: any })['style'], ...style };
-      }
+      return styleImportant
+        ? { ...style, ...(props as { style: any })['style'] }
+        : { ...(props as { style: any })['style'], ...style };
     } else {
       return props[key as keyof typeof props];
     }
@@ -123,7 +120,7 @@ export function converter<AlamProps extends Record<string, any>>(
   return <
     FunctionProps,
     ReturnType,
-    InnerAlamProps extends Record<string, any> = AlamProps
+    InnerAlamProps extends Record<string, any> = AlamProps,
   >(
     component: InputFunction<FunctionProps, ReturnType>
   ): OutputFunction<FunctionProps, ReturnType, InnerAlamProps> => {
