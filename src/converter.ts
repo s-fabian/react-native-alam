@@ -11,6 +11,7 @@ import {
 import { type DefaultProps } from './definitions';
 import { useTheme } from './theme';
 import defaultAlam from './definitions';
+import { Important } from './components';
 
 const breakpoints: Record<ResponsiveUnits, number> = {
   sm: 640, // Larger Phones/Small Tablets, 640 pixels and above
@@ -88,9 +89,9 @@ function getPrefix(from: string): StripPrefixResult | undefined {
 
 function makeProps<V extends PropertyKey>(
   props: unknown,
-  style: Record<string, any> | null,
+  style: Record<PropertyKey, any> | null,
   key: V
-): Record<string, any> | undefined {
+): Record<PropertyKey, any> | undefined {
   if (
     typeof props === 'object' &&
     props !== null &&
@@ -99,7 +100,13 @@ function makeProps<V extends PropertyKey>(
     props[key as keyof typeof props] !== null
   ) {
     if (style) {
-      return { ...(props as { style: any })['style'], ...style };
+      const styleImportant = props[Important] !== undefined;
+
+      if (styleImportant) {
+        return { ...style, ...(props as { style: any })['style'] };
+      } else {
+        return { ...(props as { style: any })['style'], ...style };
+      }
     } else {
       return props[key as keyof typeof props];
     }

@@ -32,6 +32,8 @@ import {
 import React from 'react';
 import { converter } from './converter';
 
+export const Important = Symbol('Alam Important Style');
+
 interface AlamInterface<AlamProps extends Record<string, unknown>> {
   View(props: AlamProps & ViewProps): React.ReactElement;
   TouchableHighlight(
@@ -61,6 +63,10 @@ interface AlamInterface<AlamProps extends Record<string, unknown>> {
   convert<FunctionProps>(
     component: (props: FunctionProps) => any
   ): (props: AlamProps & FunctionProps) => any;
+
+  // add this as a property to a style object
+  // to make them be applied _after_ the alam props
+  Important: symbol;
 }
 
 export function createAlam<A extends Record<string, unknown>>(
@@ -123,6 +129,7 @@ export function createAlam<A extends Record<string, unknown>>(
   ) => sectionListWrap(props);
 
   Alam.convert = alam;
+  Alam.Important = Important;
 
   return Alam;
 }
