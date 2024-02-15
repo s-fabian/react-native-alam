@@ -99,7 +99,7 @@ function makeProps<V extends PropertyKey>(
     props[key as keyof typeof props] !== null
   ) {
     if (style) {
-      const styleImportant = props['style'][Important] !== undefined;
+      const styleImportant = (props as { style: any })['style'][Important] !== undefined;
 
       return styleImportant
         ? { ...style, ...(props as { style: any })['style'] }
