@@ -6,5 +6,6 @@ export type {
   AlamDef,
   GetProps,
   AddPrefixAndDefault,
+  ForwardRef,
 } from './types';
 export type { DefaultProps } from './definitions';

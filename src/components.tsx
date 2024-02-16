@@ -1,4 +1,4 @@
-import type { AddPrefixAndDefault, GetFn } from './types';
+import type { AddPrefixAndDefault, ForwardRef, GetFn } from './types';
 import {
   type DefaultSectionT,
   SafeAreaView,
@@ -35,29 +35,47 @@ import { converter } from './converter';
 export const Important = Symbol('Alam Important Style');
 
 interface AlamInterface<AlamProps extends Record<string, unknown>> {
-  View(props: AlamProps & ViewProps): React.ReactElement;
+  View(props: AlamProps & ViewProps & ForwardRef<View>): React.ReactElement;
   TouchableHighlight(
-    props: AlamProps & TouchableHighlightProps
+    props: AlamProps & TouchableHighlightProps & ForwardRef<TouchableHighlight>
   ): React.ReactElement;
   KeyboardAvoidingView(
-    props: AlamProps & KeyboardAvoidingViewProps
+    props: AlamProps &
+      KeyboardAvoidingViewProps &
+      ForwardRef<KeyboardAvoidingView>
   ): React.ReactElement;
-  Text(props: AlamProps & TextProps): React.ReactElement;
-  Image(props: AlamProps & ImageProps): React.ReactElement;
-  ImageBackground(props: AlamProps & ImageBackgroundProps): React.ReactElement;
-  TextInput(props: AlamProps & TextInputProps): React.ReactElement;
-  ScrollView(props: AlamProps & ScrollViewProps): React.ReactElement;
-  SafeAreaView(props: AlamProps & ViewProps): React.ReactElement;
-  Pressable(props: AlamProps & PressableProps): React.ReactElement;
+  Text(props: AlamProps & TextProps & ForwardRef<Text>): React.ReactElement;
+  Image(props: AlamProps & ImageProps & ForwardRef<Image>): React.ReactElement;
+  ImageBackground(
+    props: AlamProps & ImageBackgroundProps & ForwardRef<ImageBackground>
+  ): React.ReactElement;
+  TextInput(
+    props: AlamProps & TextInputProps & ForwardRef<TextInput>
+  ): React.ReactElement;
+  ScrollView(
+    props: AlamProps & ScrollViewProps & ForwardRef<ScrollView>
+  ): React.ReactElement;
+  SafeAreaView(
+    props: AlamProps & ViewProps & ForwardRef<SafeAreaView>
+  ): React.ReactElement;
+  Pressable(
+    props: AlamProps & PressableProps & ForwardRef<View>
+  ): React.ReactElement;
   TouchableOpacity(
-    props: AlamProps & TouchableOpacityProps
+    props: AlamProps & TouchableOpacityProps & ForwardRef<TouchableOpacity>
   ): React.ReactElement;
   TouchableWithoutFeedback(
-    props: AlamProps & TouchableWithoutFeedbackProps
+    props: AlamProps &
+      TouchableWithoutFeedbackProps &
+      ForwardRef<TouchableWithoutFeedback>
   ): React.ReactElement;
-  FlatList<T>(props: AlamProps & FlatListProps<T>): React.ReactElement;
+  FlatList<T>(
+    props: AlamProps & FlatListProps<T> & ForwardRef<FlatList>
+  ): React.ReactElement;
   SectionList<ItemT, SectionT = DefaultSectionT>(
-    props: AlamProps & SectionListProps<ItemT, SectionT>
+    props: AlamProps &
+      SectionListProps<ItemT, SectionT> &
+      ForwardRef<SectionList>
   ): React.ReactElement;
 
   convert<FunctionProps>(
@@ -75,57 +93,77 @@ export function createAlam<A extends Record<string, unknown>>(
   const alam = converter(attr);
   const Alam: AlamInterface<AddPrefixAndDefault<A>> = function () {};
 
-  Alam.View = alam<ViewProps, React.ReactElement>((props) => (
-    <View {...props} />
-  ));
-  Alam.TouchableHighlight = alam<TouchableHighlightProps, React.ReactElement>(
-    (props) => <TouchableHighlight {...props} />
+  Alam.View = alam<ViewProps & ForwardRef<View>, React.ReactElement>(
+    ({ forwardRef, ...props }) => <View ref={forwardRef} {...props} />
   );
+  Alam.TouchableHighlight = alam<
+    TouchableHighlightProps & ForwardRef<TouchableHighlight>,
+    React.ReactElement
+  >(({ forwardRef, ...props }) => (
+    <TouchableHighlight ref={forwardRef} {...props} />
+  ));
   Alam.KeyboardAvoidingView = alam<
-    KeyboardAvoidingViewProps,
+    KeyboardAvoidingViewProps & ForwardRef<KeyboardAvoidingView>,
     React.ReactElement
-  >((props) => <KeyboardAvoidingView {...props} />);
-  Alam.Text = alam<TextProps, React.ReactElement>((props) => (
-    <Text {...props} />
+  >(({ forwardRef, ...props }) => (
+    <KeyboardAvoidingView ref={forwardRef} {...props} />
   ));
-  Alam.Image = alam<ImageProps, React.ReactElement>((props) => (
-    <Image {...props} />
-  ));
-  Alam.ImageBackground = alam<ImageBackgroundProps, React.ReactElement>(
-    (props) => <ImageBackground {...props} />
+  Alam.Text = alam<TextProps & ForwardRef<Text>, React.ReactElement>(
+    ({ forwardRef, ...props }) => <Text ref={forwardRef} {...props} />
   );
-  Alam.TextInput = alam<TextInputProps, React.ReactElement>((props) => (
-    <TextInput {...props} />
-  ));
-  Alam.ScrollView = alam<ScrollViewProps, React.ReactElement>((props) => (
-    <ScrollView {...props} />
-  ));
-  Alam.SafeAreaView = alam<ViewProps, React.ReactElement>((props) => (
-    <SafeAreaView {...props} />
-  ));
-  Alam.Pressable = alam<PressableProps, React.ReactElement>((props) => (
-    <Pressable {...props} />
-  ));
-  Alam.TouchableOpacity = alam<TouchableOpacityProps, React.ReactElement>(
-    (props) => <TouchableOpacity {...props} />
+  Alam.Image = alam<ImageProps & ForwardRef<Image>, React.ReactElement>(
+    ({ forwardRef, ...props }) => <Image ref={forwardRef} {...props} />
   );
+  Alam.ImageBackground = alam<
+    ImageBackgroundProps & ForwardRef<ImageBackground>,
+    React.ReactElement
+  >(({ forwardRef, ...props }) => (
+    <ImageBackground ref={forwardRef} {...props} />
+  ));
+  Alam.TextInput = alam<
+    TextInputProps & ForwardRef<TextInput>,
+    React.ReactElement
+  >(({ forwardRef, ...props }) => <TextInput ref={forwardRef} {...props} />);
+  Alam.ScrollView = alam<
+    ScrollViewProps & ForwardRef<ScrollView>,
+    React.ReactElement
+  >(({ forwardRef, ...props }) => <ScrollView ref={forwardRef} {...props} />);
+  Alam.SafeAreaView = alam<
+    ViewProps & ForwardRef<SafeAreaView>,
+    React.ReactElement
+  >(({ forwardRef, ...props }) => <SafeAreaView ref={forwardRef} {...props} />);
+  Alam.Pressable = alam<PressableProps & ForwardRef<View>, React.ReactElement>(
+    ({ forwardRef, ...props }) => <Pressable ref={forwardRef} {...props} />
+  );
+  Alam.TouchableOpacity = alam<
+    TouchableOpacityProps & ForwardRef<TouchableOpacity>,
+    React.ReactElement
+  >(({ forwardRef, ...props }) => (
+    <TouchableOpacity ref={forwardRef} {...props} />
+  ));
   Alam.TouchableWithoutFeedback = alam<
-    TouchableWithoutFeedbackProps,
+    TouchableWithoutFeedbackProps & ForwardRef<TouchableWithoutFeedback>,
     React.ReactElement
-  >((props) => <TouchableWithoutFeedback {...props} />);
-
-  const flatListWrap = alam<FlatListProps<any>, React.ReactElement>((props) => (
-    <FlatList {...props} />
+  >(({ forwardRef, ...props }) => (
+    <TouchableWithoutFeedback ref={forwardRef} {...props} />
   ));
+
+  const flatListWrap = alam<
+    FlatListProps<any> & ForwardRef<FlatList>,
+    React.ReactElement
+  >(({ forwardRef, ...props }) => <FlatList ref={forwardRef} {...props} />);
   Alam.FlatList = <T extends any>(
-    props: AddPrefixAndDefault<A> & FlatListProps<T>
+    props: AddPrefixAndDefault<A> & FlatListProps<T> & ForwardRef<FlatList>
   ) => flatListWrap(props);
 
-  const sectionListWrap = alam<SectionListProps<any, any>, React.ReactElement>(
-    (props) => <SectionList {...props} />
-  );
+  const sectionListWrap = alam<
+    SectionListProps<any, any> & ForwardRef<SectionList>,
+    React.ReactElement
+  >(({ forwardRef, ...props }) => <SectionList ref={forwardRef} {...props} />);
   Alam.SectionList = <ItemT, SectionT = DefaultSectionT>(
-    props: AddPrefixAndDefault<A> & SectionListProps<ItemT, SectionT>
+    props: AddPrefixAndDefault<A> &
+      SectionListProps<ItemT, SectionT> &
+      ForwardRef<SectionList>
   ) => sectionListWrap(props);
 
   Alam.convert = alam;

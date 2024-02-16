@@ -1,5 +1,6 @@
 import type { ImageStyle, TextStyle, ViewStyle } from 'react-native';
 import type { DefaultAlam, DefaultProps } from '.';
+import type { Ref } from 'react';
 
 type StyleBase = any;
 export type Style = StyleBase | ImageStyle | TextStyle | ViewStyle;
@@ -64,3 +65,7 @@ export type FunctionType<AlamProps extends Record<string, any>> = <
 >(
   component: InputFunction<FunctionProps, ReturnType>
 ) => OutputFunction<FunctionProps, ReturnType, AlamProps>;
+
+export interface ForwardRef<T> {
+  forwardRef?: Ref<T>;
+}
