@@ -267,8 +267,8 @@ export interface DefaultProps {
   'rounded-bl'?: number;
   // Sets border radius for the bottom-right corner
   'rounded-br'?: number;
-  // Sets the width of the border
-  border?: number;
+  // Sets the width of the border to a specified number or 1
+  border?: true | number;
   // Sets the width of the border on the left & right side
   'border-x'?: number;
   // Sets the width of the border on the top & bottom side

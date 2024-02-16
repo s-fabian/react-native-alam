@@ -80,11 +80,11 @@ export default {
   }),
 
   //-n border
-  //-d Sets the width of the border
-  //-i borderWidth: number
-  //-o borderWidth: borderWidth
-  border: (borderWidth: number, style: StyleHelp) => ({
-    borderWidth,
+  //-d Sets the width of the border to a specified number or 1
+  //-i borderWidth: true | number
+  //-o borderWidth: borderWidth === true ? 1 : borderWidth
+  border: (borderWidth: true | number, style: StyleHelp) => ({
+    borderWidth: borderWidth === true ? 1 : borderWidth,
     ...style,
   }),
 

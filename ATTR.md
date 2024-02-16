@@ -1732,9 +1732,9 @@ Changes:
 
 ### border
 
-Sets the width of the border
+Sets the width of the border to a specified number or 1
 
-`borderWidth: number`
+`borderWidth: true | number`
 
 Changes:
 
