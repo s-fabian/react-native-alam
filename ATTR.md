@@ -1088,7 +1088,7 @@ Changes:
 
 Sets top, right, bottom, and left to the same value
 
-`inset: number`
+`inset: number | `${number}%``
 
 Changes:
 
@@ -1105,7 +1105,7 @@ Changes:
 
 Sets left and right to the same value
 
-`insetX: number`
+`insetX: number | `${number}%``
 
 Changes:
 
@@ -1120,7 +1120,7 @@ Changes:
 
 Sets top and bottom to the same value
 
-`insetY: number`
+`insetY: number | `${number}%``
 
 Changes:
 

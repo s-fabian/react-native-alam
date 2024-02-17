@@ -4,12 +4,12 @@ export default {
   // Top - Bottom
   //-n inset
   //-d Sets top, right, bottom, and left to the same value
-  //-i inset: number
+  //-i inset: number | `${number}%`
   //-o top: inset
   //-o right: inset
   //-o bottom: inset
   //-o left: inset
-  inset: (inset: number, style: StyleHelp) => ({
+  inset: (inset: number | `${number}%`, style: StyleHelp) => ({
     top: inset,
     right: inset,
     bottom: inset,
@@ -19,10 +19,10 @@ export default {
 
   //-n inset-x
   //-d Sets left and right to the same value
-  //-i insetX: number
+  //-i insetX: number | `${number}%`
   //-o left: insetX
   //-o right: insetX
-  'inset-x': (insetX: number, style: StyleHelp) => ({
+  'inset-x': (insetX: number | `${number}%`, style: StyleHelp) => ({
     left: insetX,
     right: insetX,
     ...style,
@@ -30,10 +30,10 @@ export default {
 
   //-n inset-y
   //-d Sets top and bottom to the same value
-  //-i insetY: number
+  //-i insetY: number | `${number}%`
   //-o top: insetY
   //-o bottom: insetY
-  'inset-y': (insetY: number, style: StyleHelp) => ({
+  'inset-y': (insetY: number | `${number}%`, style: StyleHelp) => ({
     top: insetY,
     bottom: insetY,
     ...style,
