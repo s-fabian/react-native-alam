@@ -8,45 +8,45 @@ Tip: Click the list icon at the to right to search for properties / alams
 
 Changes the text color of an element
 
-``color: string``
+`color: string`
 
 Changes:
 
 ```js
 ({
   color: colors[color],
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### bg
 
 Changes the background color of an element
 
-``color: string``
+`color: string`
 
 Changes:
 
 ```js
 ({
   backgroundColor: colors[color],
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### opacity
 
 Changes the opacity of an element
 
-``opacity: number``
+`opacity: number`
 
 Changes:
 
 ```js
 ({
   opacity: opacity,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### shadow
@@ -62,8 +62,8 @@ Changes:
   [shadowOffset.height]: 2.6,
   shadowOpacity: 0.1,
   shadowRadius: 10.0,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### shadow-md
@@ -79,8 +79,8 @@ Changes:
   [shadowOffset.height]: 3,
   shadowOpacity: 0.12,
   shadowRadius: 5,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ## Utils for flex & co
@@ -94,23 +94,23 @@ Changes:
 ```js
 ({
   display: 'none',
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### flex
 
 Changes the item flexibility
 
-``flex: number``
+`flex: number`
 
 Changes:
 
 ```js
 ({
   flex: flex,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### flex-0
@@ -122,8 +122,8 @@ Changes:
 ```js
 ({
   flex: 0,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### flex-1
@@ -135,53 +135,53 @@ Changes:
 ```js
 ({
   flex: 1,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### flex-basis
 
 Sets the flex-basis property
 
-``flexBasis: number``
+`flexBasis: number`
 
 Changes:
 
 ```js
 ({
   flexBasis: flexBasis,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### flex-grow
 
 Sets the flex-grow property
 
-``flexGrow: true | number``
+`flexGrow: true | number`
 
 Changes:
 
 ```js
 ({
   flexGrow: flexGrow,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### flex-shrink
 
 Sets the flex-shrink property
 
-``flexShrink: true | number``
+`flexShrink: true | number`
 
 Changes:
 
 ```js
 ({
   flexShrink: flexShrink,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### flex-wrap
@@ -193,8 +193,8 @@ Changes:
 ```js
 ({
   flexWrap: 'wrap',
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### flex-nowrap
@@ -206,8 +206,8 @@ Changes:
 ```js
 ({
   flexWrap: 'nowrap',
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### flex-row
@@ -219,8 +219,8 @@ Changes:
 ```js
 ({
   flexDirection: 'row',
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### flex-column
@@ -232,8 +232,8 @@ Changes:
 ```js
 ({
   flexDirection: 'column',
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### flex-row-rev
@@ -245,8 +245,8 @@ Changes:
 ```js
 ({
   flexDirection: 'row-reverse',
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### flex-column-rev
@@ -258,8 +258,8 @@ Changes:
 ```js
 ({
   flexDirection: 'column-reverse',
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### justify-start
@@ -271,8 +271,8 @@ Changes:
 ```js
 ({
   justifyContent: 'flex-start',
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### justify-end
@@ -284,8 +284,8 @@ Changes:
 ```js
 ({
   justifyContent: 'flex-end',
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### justify-center
@@ -297,8 +297,8 @@ Changes:
 ```js
 ({
   justifyContent: 'center',
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### justify-between
@@ -310,8 +310,8 @@ Changes:
 ```js
 ({
   justifyContent: 'space-between',
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### justify-around
@@ -323,8 +323,8 @@ Changes:
 ```js
 ({
   justifyContent: 'space-around',
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### justify-evenly
@@ -336,8 +336,8 @@ Changes:
 ```js
 ({
   justifyContent: 'space-evenly',
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### justify-items-start
@@ -349,8 +349,8 @@ Changes:
 ```js
 ({
   justifyItems: 'flex-start',
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### justify-items-end
@@ -362,8 +362,8 @@ Changes:
 ```js
 ({
   justifyItems: 'flex-end',
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### justify-items-center
@@ -375,8 +375,8 @@ Changes:
 ```js
 ({
   justifyItems: 'center',
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### justify-self-start
@@ -388,8 +388,8 @@ Changes:
 ```js
 ({
   justifySelf: 'flex-start',
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### justify-self-end
@@ -401,8 +401,8 @@ Changes:
 ```js
 ({
   justifySelf: 'flex-end',
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### justify-self-center
@@ -414,8 +414,8 @@ Changes:
 ```js
 ({
   justifySelf: 'center',
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### align-content-start
@@ -427,8 +427,8 @@ Changes:
 ```js
 ({
   alignContent: 'flex-start',
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### align-content-end
@@ -440,8 +440,8 @@ Changes:
 ```js
 ({
   alignContent: 'flex-end',
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### align-content-center
@@ -453,8 +453,8 @@ Changes:
 ```js
 ({
   alignContent: 'center',
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### align-content-stretch
@@ -466,8 +466,8 @@ Changes:
 ```js
 ({
   alignContent: 'stretch',
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### align-content-between
@@ -479,8 +479,8 @@ Changes:
 ```js
 ({
   alignContent: 'space-between',
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### align-content-around
@@ -492,8 +492,8 @@ Changes:
 ```js
 ({
   alignContent: 'space-around',
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### items-start
@@ -505,8 +505,8 @@ Changes:
 ```js
 ({
   alignItems: 'flex-start',
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### items-end
@@ -518,8 +518,8 @@ Changes:
 ```js
 ({
   alignItems: 'flex-end',
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### items-center
@@ -531,8 +531,8 @@ Changes:
 ```js
 ({
   alignItems: 'center',
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### items-stretch
@@ -544,8 +544,8 @@ Changes:
 ```js
 ({
   alignItems: 'stretch',
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### items-baseline
@@ -557,8 +557,8 @@ Changes:
 ```js
 ({
   alignItems: 'baseline',
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### align-self-auto
@@ -570,8 +570,8 @@ Changes:
 ```js
 ({
   alignSelf: 'auto',
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### align-self-start
@@ -583,8 +583,8 @@ Changes:
 ```js
 ({
   alignSelf: 'start',
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### align-self-end
@@ -596,8 +596,8 @@ Changes:
 ```js
 ({
   alignSelf: 'end',
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### align-self-center
@@ -609,8 +609,8 @@ Changes:
 ```js
 ({
   alignSelf: 'center',
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### align-self-stretch
@@ -622,8 +622,8 @@ Changes:
 ```js
 ({
   alignSelf: 'stretch',
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### align-self-baseline
@@ -635,8 +635,8 @@ Changes:
 ```js
 ({
   alignSelf: 'baseline',
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ## Utils for texts
@@ -645,15 +645,15 @@ Changes:
 
 Changes the font size of a text
 
-``size: number``
+`size: number`
 
 Changes:
 
 ```js
 ({
   fontSize: size,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### text-xs
@@ -665,8 +665,8 @@ Changes:
 ```js
 ({
   fontSize: 12,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### text-sm
@@ -678,8 +678,8 @@ Changes:
 ```js
 ({
   fontSize: 14,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### text-md
@@ -691,8 +691,8 @@ Changes:
 ```js
 ({
   fontSize: 16,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### text-lg
@@ -704,8 +704,8 @@ Changes:
 ```js
 ({
   fontSize: 20,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### text-xl
@@ -717,8 +717,8 @@ Changes:
 ```js
 ({
   fontSize: 24,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### text-2xl
@@ -730,8 +730,8 @@ Changes:
 ```js
 ({
   fontSize: 30,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### text-3xl
@@ -743,8 +743,8 @@ Changes:
 ```js
 ({
   fontSize: 40,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### text-4xl
@@ -756,8 +756,8 @@ Changes:
 ```js
 ({
   fontSize: 50,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### italic
@@ -769,8 +769,8 @@ Changes:
 ```js
 ({
   fontStyle: 'italic',
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### not-italic
@@ -782,8 +782,8 @@ Changes:
 ```js
 ({
   fontStyle: 'normal',
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### uppercase
@@ -795,8 +795,8 @@ Changes:
 ```js
 ({
   textTransform: 'uppercase',
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### lowercase
@@ -808,8 +808,8 @@ Changes:
 ```js
 ({
   textTransform: 'lowercase',
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### capitalize
@@ -821,8 +821,8 @@ Changes:
 ```js
 ({
   textTransform: 'capitalize',
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### normal-case
@@ -834,8 +834,8 @@ Changes:
 ```js
 ({
   textTransform: 'none',
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### font-thin
@@ -847,8 +847,8 @@ Changes:
 ```js
 ({
   fontWeight: '100',
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### font-extralight
@@ -860,8 +860,8 @@ Changes:
 ```js
 ({
   fontWeight: '200',
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### font-light
@@ -873,8 +873,8 @@ Changes:
 ```js
 ({
   fontWeight: '300',
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### font-normal
@@ -886,8 +886,8 @@ Changes:
 ```js
 ({
   fontWeight: '400',
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### font-medium
@@ -899,8 +899,8 @@ Changes:
 ```js
 ({
   fontWeight: '500',
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### font-semibold
@@ -912,8 +912,8 @@ Changes:
 ```js
 ({
   fontWeight: '600',
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### font-bold
@@ -925,8 +925,8 @@ Changes:
 ```js
 ({
   fontWeight: '700',
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### font-extrabold
@@ -938,8 +938,8 @@ Changes:
 ```js
 ({
   fontWeight: '800',
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### font-black
@@ -951,23 +951,23 @@ Changes:
 ```js
 ({
   fontWeight: '900',
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### leading
 
 Sets the line height of the text
 
-``lineHeight: number``
+`lineHeight: number`
 
 Changes:
 
 ```js
 ({
   lineHeight: lineHeight,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### text-left
@@ -979,8 +979,8 @@ Changes:
 ```js
 ({
   textAlign: 'left',
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### text-center
@@ -992,8 +992,8 @@ Changes:
 ```js
 ({
   textAlign: 'center',
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### text-right
@@ -1005,8 +1005,8 @@ Changes:
 ```js
 ({
   textAlign: 'right',
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### text-justify
@@ -1018,8 +1018,8 @@ Changes:
 ```js
 ({
   textAlign: 'justify',
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### underline
@@ -1031,8 +1031,8 @@ Changes:
 ```js
 ({
   textDecorationLine: 'underline',
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### line-through
@@ -1044,8 +1044,8 @@ Changes:
 ```js
 ({
   textDecorationLine: 'line-through',
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### no-underline
@@ -1057,8 +1057,8 @@ Changes:
 ```js
 ({
   textDecorationLine: 'none',
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ## Other Utils
@@ -1067,15 +1067,15 @@ Changes:
 
 Sets the aspect ratio
 
-``aspectRatio: number``
+`aspectRatio: number`
 
 Changes:
 
 ```js
 ({
   aspectRatio: aspectRatio,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### aspect-square
@@ -1087,8 +1087,8 @@ Changes:
 ```js
 ({
   aspectRatio: 1,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### aspect-video
@@ -1100,8 +1100,8 @@ Changes:
 ```js
 ({
   aspectRatio: 16,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### dir-ltr
@@ -1113,8 +1113,8 @@ Changes:
 ```js
 ({
   direction: 'ltr',
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### dir-rtl
@@ -1126,8 +1126,8 @@ Changes:
 ```js
 ({
   direction: 'rtl',
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### overflow-visible
@@ -1139,8 +1139,8 @@ Changes:
 ```js
 ({
   overflow: 'visible',
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### overflow-hidden
@@ -1152,8 +1152,8 @@ Changes:
 ```js
 ({
   overflow: 'hidden',
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### overflow-scroll
@@ -1165,53 +1165,53 @@ Changes:
 ```js
 ({
   overflow: 'scroll',
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### scale
 
 Changes the scale of an element
 
-``scale: number``
+`scale: number`
 
 Changes:
 
 ```js
 ({
   transform: [...transform, { scale: scale }],
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### scale-x
 
 Changes the scale of an element
 
-``scaleX: number``
+`scaleX: number`
 
 Changes:
 
 ```js
 ({
   transform: [...transform, { scaleX: scaleX }],
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### scale-y
 
 Changes the scale of an element
 
-``scaleY: number``
+`scaleY: number`
 
 Changes:
 
 ```js
 ({
   transform: [...transform, { scaleY: scaleY }],
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ## Position & Size Utils
@@ -1230,8 +1230,8 @@ Changes:
   right: inset,
   bottom: inset,
   left: inset,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### inset-x
@@ -1246,8 +1246,8 @@ Changes:
 ({
   left: insetX,
   right: insetX,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### inset-y
@@ -1262,8 +1262,8 @@ Changes:
 ({
   top: insetY,
   bottom: insetY,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### start
@@ -1277,8 +1277,8 @@ Changes:
 ```js
 ({
   start: start,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### end
@@ -1292,8 +1292,8 @@ Changes:
 ```js
 ({
   end: end,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### left
@@ -1307,8 +1307,8 @@ Changes:
 ```js
 ({
   left: left,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### right
@@ -1322,8 +1322,8 @@ Changes:
 ```js
 ({
   right: right,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### top
@@ -1337,8 +1337,8 @@ Changes:
 ```js
 ({
   top: top,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### bottom
@@ -1352,8 +1352,8 @@ Changes:
 ```js
 ({
   bottom: bottom,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### absolute
@@ -1365,8 +1365,8 @@ Changes:
 ```js
 ({
   position: 'absolute',
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### relative
@@ -1378,8 +1378,8 @@ Changes:
 ```js
 ({
   position: 'relative',
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### w
@@ -1393,8 +1393,8 @@ Changes:
 ```js
 ({
   width: width,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### h
@@ -1408,8 +1408,8 @@ Changes:
 ```js
 ({
   height: height,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### w-full
@@ -1421,8 +1421,8 @@ Changes:
 ```js
 ({
   width: '100%',
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### h-full
@@ -1434,8 +1434,8 @@ Changes:
 ```js
 ({
   height: '100%',
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### max-w
@@ -1449,8 +1449,8 @@ Changes:
 ```js
 ({
   maxWidth: maxWidth,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### max-h
@@ -1464,8 +1464,8 @@ Changes:
 ```js
 ({
   maxHeight: maxHeight,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### min-w
@@ -1479,8 +1479,8 @@ Changes:
 ```js
 ({
   minWidth: minWidth,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### min-h
@@ -1494,23 +1494,23 @@ Changes:
 ```js
 ({
   minHeight: minHeight,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### z
 
 Sets z-index
 
-``zIndex: number``
+`zIndex: number`
 
 Changes:
 
 ```js
 ({
   zIndex: zIndex,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ## Utils for margin, padding & co
@@ -1526,8 +1526,8 @@ Changes:
 ```js
 ({
   padding: padding,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### pt
@@ -1541,8 +1541,8 @@ Changes:
 ```js
 ({
   paddingTop: paddingTop,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### pb
@@ -1556,8 +1556,8 @@ Changes:
 ```js
 ({
   paddingBottom: paddingBottom,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### pl
@@ -1571,8 +1571,8 @@ Changes:
 ```js
 ({
   paddingLeft: paddingLeft,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### pr
@@ -1586,8 +1586,8 @@ Changes:
 ```js
 ({
   paddingRight: paddingRight,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### ps
@@ -1601,8 +1601,8 @@ Changes:
 ```js
 ({
   paddingStart: paddingStart,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### pe
@@ -1616,8 +1616,8 @@ Changes:
 ```js
 ({
   paddingEnd: paddingEnd,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### px
@@ -1631,8 +1631,8 @@ Changes:
 ```js
 ({
   paddingHorizontal: paddingHorizontal,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### py
@@ -1646,8 +1646,8 @@ Changes:
 ```js
 ({
   paddingVertical: paddingVertical,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### m
@@ -1661,8 +1661,8 @@ Changes:
 ```js
 ({
   margin: margin,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### mt
@@ -1676,8 +1676,8 @@ Changes:
 ```js
 ({
   marginTop: marginTop,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### mb
@@ -1691,8 +1691,8 @@ Changes:
 ```js
 ({
   marginBottom: marginBottom,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### ml
@@ -1706,8 +1706,8 @@ Changes:
 ```js
 ({
   marginLeft: marginLeft,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### mr
@@ -1721,8 +1721,8 @@ Changes:
 ```js
 ({
   marginRight: marginRight,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### ms
@@ -1736,8 +1736,8 @@ Changes:
 ```js
 ({
   marginStart: marginStart,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### me
@@ -1751,8 +1751,8 @@ Changes:
 ```js
 ({
   marginEnd: marginEnd,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### mx
@@ -1766,8 +1766,8 @@ Changes:
 ```js
 ({
   marginHorizontal: marginHorizontal,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### my
@@ -1781,53 +1781,53 @@ Changes:
 ```js
 ({
   marginVertical: marginVertical,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### gap
 
 Sets the gap between elements
 
-``gap: number``
+`gap: number`
 
 Changes:
 
 ```js
 ({
   gap: gap,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### gap-x
 
 Sets the gap between columns
 
-``columnGap: number``
+`columnGap: number`
 
 Changes:
 
 ```js
 ({
   columnGap: columnGap,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### gap-y
 
 Sets the gap between rows
 
-``rowGap: number``
+`rowGap: number`
 
 Changes:
 
 ```js
 ({
   rowGap: rowGap,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ## Utils for borders
@@ -1836,15 +1836,15 @@ Changes:
 
 Sets border radius
 
-``borderRadius: true | number``
+`borderRadius: true | number`
 
 Changes:
 
 ```js
 ({
   borderRadius: borderRadius,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### rounded-md
@@ -1856,8 +1856,8 @@ Changes:
 ```js
 ({
   borderRadius: 15,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### rounded-lg
@@ -1869,8 +1869,8 @@ Changes:
 ```js
 ({
   borderRadius: 20,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### rounded-xl
@@ -1882,8 +1882,8 @@ Changes:
 ```js
 ({
   borderRadius: 30,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### rounded-full
@@ -1895,90 +1895,90 @@ Changes:
 ```js
 ({
   borderRadius: 9999,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### rounded-tl
 
 Sets border radius for the top-left corner
 
-``borderTopLeftRadius: number``
+`borderTopLeftRadius: number`
 
 Changes:
 
 ```js
 ({
   borderTopLeftRadius: borderTopLeftRadius,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### rounded-tr
 
 Sets border radius for the top-right corner
 
-``borderTopRightRadius: number``
+`borderTopRightRadius: number`
 
 Changes:
 
 ```js
 ({
   borderTopRightRadius: borderTopRightRadius,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### rounded-bl
 
 Sets border radius for the bottom-left corner
 
-``borderBottomLeftRadius: number``
+`borderBottomLeftRadius: number`
 
 Changes:
 
 ```js
 ({
   borderBottomLeftRadius: borderBottomLeftRadius,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### rounded-br
 
 Sets border radius for the bottom-right corner
 
-``borderBottomRightRadius: number``
+`borderBottomRightRadius: number`
 
 Changes:
 
 ```js
 ({
   borderBottomRightRadius: borderBottomRightRadius,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### border
 
 Sets the width of the border to a specified number or 1
 
-``borderWidth: true | number``
+`borderWidth: true | number`
 
 Changes:
 
 ```js
 ({
   borderWidth: borderWidth,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### border-x
 
 Sets the width of the border on the left & right side
 
-``borderWidth: number``
+`borderWidth: number`
 
 Changes:
 
@@ -1986,15 +1986,15 @@ Changes:
 ({
   borderLeftWidth: borderWidth,
   borderRightWidth: borderWidth,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### border-y
 
 Sets the width of the border on the top & bottom side
 
-``borderWidth: number``
+`borderWidth: number`
 
 Changes:
 
@@ -2002,81 +2002,81 @@ Changes:
 ({
   borderTopWidth: borderWidth,
   borderBottomWidth: borderWidth,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### border-l
 
 Sets the width of the border on the left side
 
-``borderLeftWidth: number``
+`borderLeftWidth: number`
 
 Changes:
 
 ```js
 ({
   borderLeftWidth: borderLeftWidth,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### border-r
 
 Sets the width of the border on the right side
 
-``borderRightWidth: number``
+`borderRightWidth: number`
 
 Changes:
 
 ```js
 ({
   borderRightWidth: borderRightWidth,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### border-t
 
 Sets the width of the border on the top side
 
-``borderTopWidth: number``
+`borderTopWidth: number`
 
 Changes:
 
 ```js
 ({
   borderTopWidth: borderTopWidth,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### border-b
 
 Sets the width of the border on the bottom side
 
-``borderBottomWidth: number``
+`borderBottomWidth: number`
 
 Changes:
 
 ```js
 ({
   borderBottomWidth: borderBottomWidth,
-  ...styles
-})
+  ...styles,
+});
 ```
 
 ### border-color
 
 Sets the color of the border
 
-``borderColor: string``
+`borderColor: string`
 
 Changes:
 
 ```js
 ({
   borderColor: colors[borderColor],
-  ...styles
-})
+  ...styles,
+});
 ```

@@ -105,7 +105,11 @@ for (const fileName in tsFiles) {
   for (const { name, desc, input, outputs } of found) {
     const nameFormat = `### ${name}`;
     const descFormat = desc;
-    const inputFormat = input ? `\`\`${input[0]}: ${input[1]}\`\`` : '';
+
+    const escapeInput = input?.some((s) => s.includes('`'));
+    const ticks = escapeInput ? '``' : '`';
+
+    const inputFormat = input ? `${ticks}${input[0]}: ${input[1]}${ticks}` : '';
     const outputFormat =
       `Changes:\n\n\`\`\`js\n({` +
       outputs
@@ -113,7 +117,7 @@ for (const fileName in tsFiles) {
           return `\n  ${name}: ${value},`;
         })
         .join('') +
-      '\n  ...styles\n})\n```';
+      '\n  ...styles,\n});\n```';
 
     readme += '\n\n' + nameFormat;
     readme += '\n\n' + descFormat;
