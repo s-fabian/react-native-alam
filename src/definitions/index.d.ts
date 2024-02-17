@@ -173,6 +173,12 @@ export interface DefaultProps {
   'overflow-hidden'?: true;
   // Changes overflow / how the element is measured and displayed
   'overflow-scroll'?: true;
+  // Sets top, right, bottom, and left to the same value
+  inset?: number;
+  // Sets left and right to the same value
+  'inset-x'?: number;
+  // Sets top and bottom to the same value
+  'inset-y'?: number;
   // Sets the start position
   start?: number | `${number}%`;
   // Sets the end position

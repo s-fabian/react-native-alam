@@ -5,7 +5,10 @@ export default {
   //-n inset
   //-d Sets top, right, bottom, and left to the same value
   //-i inset: number
-  //-o top, right, bottom, left: inset
+  //-o top: inset
+  //-o right: inset
+  //-o bottom: inset
+  //-o left: inset
   inset: (inset: number, style: StyleHelp) => ({
     top: inset,
     right: inset,
@@ -14,21 +17,23 @@ export default {
     ...style,
   }),
 
-  //-n insetX
+  //-n inset-x
   //-d Sets left and right to the same value
   //-i insetX: number
-  //-o left, right: insetX
-  insetX: (insetX: number, style: StyleHelp) => ({
+  //-o left: insetX
+  //-o right: insetX
+  'inset-x': (insetX: number, style: StyleHelp) => ({
     left: insetX,
     right: insetX,
     ...style,
   }),
 
-  //-n insetY
+  //-n inset-y
   //-d Sets top and bottom to the same value
   //-i insetY: number
-  //-o top, bottom: insetY
-  insetY: (insetY: number, style: StyleHelp) => ({
+  //-o top: insetY
+  //-o bottom: insetY
+  'inset-y': (insetY: number, style: StyleHelp) => ({
     top: insetY,
     bottom: insetY,
     ...style,

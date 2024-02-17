@@ -1084,6 +1084,53 @@ Changes:
 
 ## Position & Size Utils
 
+### inset
+
+Sets top, right, bottom, and left to the same value
+
+`inset: number`
+
+Changes:
+
+```js
+{
+  top: inset,
+  right: inset,
+  bottom: inset,
+  left: inset
+}
+```
+
+### inset-x
+
+Sets left and right to the same value
+
+`insetX: number`
+
+Changes:
+
+```js
+{
+  left: insetX,
+  right: insetX
+}
+```
+
+### inset-y
+
+Sets top and bottom to the same value
+
+`insetY: number`
+
+Changes:
+
+```js
+{
+  top: insetY,
+  bottom: insetY
+}
+```
+
 ### start
 
 Sets the start position
