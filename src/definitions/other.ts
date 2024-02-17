@@ -23,6 +23,7 @@ export default {
     aspectRatio: 16 / 9,
     ...style,
   }),
+
   //-n dir-ltr
   //-d Changes the direction to left-to-right
   //-o direction: 'ltr'
@@ -51,6 +52,33 @@ export default {
   //-o overflow: 'scroll'
   'overflow-scroll': (_: true, style: StyleHelp) => ({
     overflow: 'scroll',
+    ...style,
+  }),
+
+  //-n scale
+  //-d Changes the scale of an element
+  //-i scale: number
+  //-o transform: [...transform, { scale: scale }]
+  scale: (scale: number, style: StyleHelp) => ({
+    transform: [{ scale }, ...style.transform],
+    ...style,
+  }),
+
+  //-n scale-x
+  //-d Changes the scale of an element
+  //-i scaleX: number
+  //-o transform: [...transform, { scaleX: scaleX }]
+  'scale-x': (scaleX: number, style: StyleHelp) => ({
+    transform: [{ scaleX }, ...style.transform],
+    ...style,
+  }),
+
+  //-n scale-y
+  //-d Changes the scale of an element
+  //-i scaleY: number
+  //-o transform: [...transform, { scaleY: scaleY }]
+  'scale-y': (scaleY: number, style: StyleHelp) => ({
+    transform: [{ scaleY }, ...style.transform],
     ...style,
   }),
 };

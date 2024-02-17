@@ -3,7 +3,7 @@
 import { readFile, writeFile } from 'node:fs/promises';
 
 const regex =
-  /[\s\n]*\/\/-n \w(\w|-)*[\s\n]*\/\/-d (\w).*[\s\n]*(\/\/-i \w+\s*:\s*\w(\w|`|\{|}|\$|%| |\|)*)?[\s\n]*(\/\/-o (\w|\.|\[|])+:\s*\'?(\w|-| |%|#|\.)+'?[\s\n]*)+/g;
+  /[\s\n]*\/\/-n \w(\w|-)*[\s\n]*\/\/-d (\w).*[\s\n]*(\/\/-i \w+\s*:\s*\w(\w|`|\{|}|\$|%| |\|)*)?[\s\n]*(\/\/-o (\w|\.|\[|])+:\s*\'?(\w|-|\[|]|\{|}|:| |,|%|#|\.)+'?[\s\n]*)+/g;
 
 const tsFiles = {
   'colors.ts': 'Color Utils',
@@ -13,6 +13,18 @@ const tsFiles = {
   'position.ts': 'Position & Size Utils',
   'spacing.ts': 'Utils for margin, padding & co',
   'border.ts': 'Utils for borders',
+};
+
+String.prototype.splitOnce = function (searchFor) {
+  const index = this.indexOf(searchFor);
+
+  if (index === -1) {
+    return [this, ''];
+  } else {
+    const start = this.substring(0, index);
+    const end = this.substring(index + 1, this.length);
+    return [start, end];
+  }
 };
 
 let readme = '# Attributes for `react-native-alam`';
@@ -59,7 +71,7 @@ for (const fileName in tsFiles) {
         .splice(0, 1)[0]
         .replace(/^\/\/-i/, '')
         .trim()
-        .split(/:/, 2)
+        .splitOnce(':')
         .map((s) => s.trim());
     }
 
@@ -67,7 +79,7 @@ for (const fileName in tsFiles) {
       l
         .replace(/^\/\/-o/, '')
         .trim()
-        .split(/:/, 2)
+        .splitOnce(':')
         .map((s) => s.trim())
     );
 
@@ -93,15 +105,15 @@ for (const fileName in tsFiles) {
   for (const { name, desc, input, outputs } of found) {
     const nameFormat = `### ${name}`;
     const descFormat = desc;
-    const inputFormat = input ? `\`${input[0]}: ${input[1]}\`` : '';
+    const inputFormat = input ? `\`\`${input[0]}: ${input[1]}\`\`` : '';
     const outputFormat =
-      `Changes:\n\n\`\`\`js\n{` +
+      `Changes:\n\n\`\`\`js\n({` +
       outputs
-        .map(([name, value], i) => {
-          return `\n  ${name}: ${value}${i === outputs.length - 1 ? '' : ','}`;
+        .map(([name, value]) => {
+          return `\n  ${name}: ${value},`;
         })
         .join('') +
-      '\n}\n```';
+      '\n  ...styles\n})\n```';
 
     readme += '\n\n' + nameFormat;
     readme += '\n\n' + descFormat;

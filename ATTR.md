@@ -8,42 +8,45 @@ Tip: Click the list icon at the to right to search for properties / alams
 
 Changes the text color of an element
 
-`color: string`
+``color: string``
 
 Changes:
 
 ```js
-{
-  color: colors
-}
+({
+  color: colors[color],
+  ...styles
+})
 ```
 
 ### bg
 
 Changes the background color of an element
 
-`color: string`
+``color: string``
 
 Changes:
 
 ```js
-{
-  backgroundColor: colors
-}
+({
+  backgroundColor: colors[color],
+  ...styles
+})
 ```
 
 ### opacity
 
 Changes the opacity of an element
 
-`opacity: number`
+``opacity: number``
 
 Changes:
 
 ```js
-{
-  opacity: opacity
-}
+({
+  opacity: opacity,
+  ...styles
+})
 ```
 
 ### shadow
@@ -53,13 +56,14 @@ Add a shadow to the element
 Changes:
 
 ```js
-{
+({
   shadowColor: '#000000',
   [shadowOffset.width]: 0,
   [shadowOffset.height]: 2.6,
   shadowOpacity: 0.1,
-  shadowRadius: 10.0
-}
+  shadowRadius: 10.0,
+  ...styles
+})
 ```
 
 ### shadow-md
@@ -69,13 +73,14 @@ Add a shadow to the element
 Changes:
 
 ```js
-{
+({
   shadowColor: '#000000',
   [shadowOffset.width]: 3,
   [shadowOffset.height]: 3,
   shadowOpacity: 0.12,
-  shadowRadius: 5
-}
+  shadowRadius: 5,
+  ...styles
+})
 ```
 
 ## Utils for flex & co
@@ -87,23 +92,25 @@ Makes an element hidden
 Changes:
 
 ```js
-{
-  display: 'none'
-}
+({
+  display: 'none',
+  ...styles
+})
 ```
 
 ### flex
 
 Changes the item flexibility
 
-`flex: number`
+``flex: number``
 
 Changes:
 
 ```js
-{
-  flex: flex
-}
+({
+  flex: flex,
+  ...styles
+})
 ```
 
 ### flex-0
@@ -113,9 +120,10 @@ Changes the item flexibility to zero
 Changes:
 
 ```js
-{
-  flex: 0
-}
+({
+  flex: 0,
+  ...styles
+})
 ```
 
 ### flex-1
@@ -125,51 +133,55 @@ Changes the item flexibility to one
 Changes:
 
 ```js
-{
-  flex: 1
-}
+({
+  flex: 1,
+  ...styles
+})
 ```
 
 ### flex-basis
 
 Sets the flex-basis property
 
-`flexBasis: number`
+``flexBasis: number``
 
 Changes:
 
 ```js
-{
-  flexBasis: flexBasis
-}
+({
+  flexBasis: flexBasis,
+  ...styles
+})
 ```
 
 ### flex-grow
 
 Sets the flex-grow property
 
-`flexGrow: true | number`
+``flexGrow: true | number``
 
 Changes:
 
 ```js
-{
-  flexGrow: flexGrow
-}
+({
+  flexGrow: flexGrow,
+  ...styles
+})
 ```
 
 ### flex-shrink
 
 Sets the flex-shrink property
 
-`flexShrink: true | number`
+``flexShrink: true | number``
 
 Changes:
 
 ```js
-{
-  flexShrink: flexShrink
-}
+({
+  flexShrink: flexShrink,
+  ...styles
+})
 ```
 
 ### flex-wrap
@@ -179,9 +191,10 @@ Sets wrapping of flex items
 Changes:
 
 ```js
-{
-  flexWrap: 'wrap'
-}
+({
+  flexWrap: 'wrap',
+  ...styles
+})
 ```
 
 ### flex-nowrap
@@ -191,9 +204,10 @@ Prevents wrapping of flex items
 Changes:
 
 ```js
-{
-  flexWrap: 'nowrap'
-}
+({
+  flexWrap: 'nowrap',
+  ...styles
+})
 ```
 
 ### flex-row
@@ -203,9 +217,10 @@ Sets flex direction to row
 Changes:
 
 ```js
-{
-  flexDirection: 'row'
-}
+({
+  flexDirection: 'row',
+  ...styles
+})
 ```
 
 ### flex-column
@@ -215,9 +230,10 @@ Sets flex direction to column
 Changes:
 
 ```js
-{
-  flexDirection: 'column'
-}
+({
+  flexDirection: 'column',
+  ...styles
+})
 ```
 
 ### flex-row-rev
@@ -227,9 +243,10 @@ Sets flex direction to row-reverse
 Changes:
 
 ```js
-{
-  flexDirection: 'row-reverse'
-}
+({
+  flexDirection: 'row-reverse',
+  ...styles
+})
 ```
 
 ### flex-column-rev
@@ -239,9 +256,10 @@ Sets flex direction to column-reverse
 Changes:
 
 ```js
-{
-  flexDirection: 'column-reverse'
-}
+({
+  flexDirection: 'column-reverse',
+  ...styles
+})
 ```
 
 ### justify-start
@@ -251,9 +269,10 @@ Aligns content to the start
 Changes:
 
 ```js
-{
-  justifyContent: 'flex-start'
-}
+({
+  justifyContent: 'flex-start',
+  ...styles
+})
 ```
 
 ### justify-end
@@ -263,9 +282,10 @@ Aligns content to the end
 Changes:
 
 ```js
-{
-  justifyContent: 'flex-end'
-}
+({
+  justifyContent: 'flex-end',
+  ...styles
+})
 ```
 
 ### justify-center
@@ -275,9 +295,10 @@ Aligns content to the center
 Changes:
 
 ```js
-{
-  justifyContent: 'center'
-}
+({
+  justifyContent: 'center',
+  ...styles
+})
 ```
 
 ### justify-between
@@ -287,9 +308,10 @@ Distributes space between items
 Changes:
 
 ```js
-{
-  justifyContent: 'space-between'
-}
+({
+  justifyContent: 'space-between',
+  ...styles
+})
 ```
 
 ### justify-around
@@ -299,9 +321,10 @@ Distributes space around items
 Changes:
 
 ```js
-{
-  justifyContent: 'space-around'
-}
+({
+  justifyContent: 'space-around',
+  ...styles
+})
 ```
 
 ### justify-evenly
@@ -311,9 +334,10 @@ Distributes space evenly between items
 Changes:
 
 ```js
-{
-  justifyContent: 'space-evenly'
-}
+({
+  justifyContent: 'space-evenly',
+  ...styles
+})
 ```
 
 ### justify-items-start
@@ -323,9 +347,10 @@ Aligns items to the start in their line
 Changes:
 
 ```js
-{
-  justifyItems: 'flex-start'
-}
+({
+  justifyItems: 'flex-start',
+  ...styles
+})
 ```
 
 ### justify-items-end
@@ -335,9 +360,10 @@ Aligns items to the end in their line
 Changes:
 
 ```js
-{
-  justifyItems: 'flex-end'
-}
+({
+  justifyItems: 'flex-end',
+  ...styles
+})
 ```
 
 ### justify-items-center
@@ -347,9 +373,10 @@ Aligns items to the center in their line
 Changes:
 
 ```js
-{
-  justifyItems: 'center'
-}
+({
+  justifyItems: 'center',
+  ...styles
+})
 ```
 
 ### justify-self-start
@@ -359,9 +386,10 @@ Aligns the item itself to the start
 Changes:
 
 ```js
-{
-  justifySelf: 'flex-start'
-}
+({
+  justifySelf: 'flex-start',
+  ...styles
+})
 ```
 
 ### justify-self-end
@@ -371,9 +399,10 @@ Aligns the item itself to the end
 Changes:
 
 ```js
-{
-  justifySelf: 'flex-end'
-}
+({
+  justifySelf: 'flex-end',
+  ...styles
+})
 ```
 
 ### justify-self-center
@@ -383,9 +412,10 @@ Aligns the item itself to the center
 Changes:
 
 ```js
-{
-  justifySelf: 'center'
-}
+({
+  justifySelf: 'center',
+  ...styles
+})
 ```
 
 ### align-content-start
@@ -395,9 +425,10 @@ Aligns content to the start on the cross axis
 Changes:
 
 ```js
-{
-  alignContent: 'flex-start'
-}
+({
+  alignContent: 'flex-start',
+  ...styles
+})
 ```
 
 ### align-content-end
@@ -407,9 +438,10 @@ Aligns content to the end on the cross axis
 Changes:
 
 ```js
-{
-  alignContent: 'flex-end'
-}
+({
+  alignContent: 'flex-end',
+  ...styles
+})
 ```
 
 ### align-content-center
@@ -419,9 +451,10 @@ Aligns content to the center on the cross axis
 Changes:
 
 ```js
-{
-  alignContent: 'center'
-}
+({
+  alignContent: 'center',
+  ...styles
+})
 ```
 
 ### align-content-stretch
@@ -431,9 +464,10 @@ Stretches the content across the cross axis
 Changes:
 
 ```js
-{
-  alignContent: 'stretch'
-}
+({
+  alignContent: 'stretch',
+  ...styles
+})
 ```
 
 ### align-content-between
@@ -443,9 +477,10 @@ Distributes space between lines on the cross axis
 Changes:
 
 ```js
-{
-  alignContent: 'space-between'
-}
+({
+  alignContent: 'space-between',
+  ...styles
+})
 ```
 
 ### align-content-around
@@ -455,9 +490,10 @@ Distributes space around lines on the cross axis
 Changes:
 
 ```js
-{
-  alignContent: 'space-around'
-}
+({
+  alignContent: 'space-around',
+  ...styles
+})
 ```
 
 ### items-start
@@ -467,9 +503,10 @@ Aligns items to the start on the cross axis
 Changes:
 
 ```js
-{
-  alignItems: 'flex-start'
-}
+({
+  alignItems: 'flex-start',
+  ...styles
+})
 ```
 
 ### items-end
@@ -479,9 +516,10 @@ Aligns items to the end on the cross axis
 Changes:
 
 ```js
-{
-  alignItems: 'flex-end'
-}
+({
+  alignItems: 'flex-end',
+  ...styles
+})
 ```
 
 ### items-center
@@ -491,9 +529,10 @@ Aligns items to the center on the cross axis
 Changes:
 
 ```js
-{
-  alignItems: 'center'
-}
+({
+  alignItems: 'center',
+  ...styles
+})
 ```
 
 ### items-stretch
@@ -503,9 +542,10 @@ Stretches items across the cross axis
 Changes:
 
 ```js
-{
-  alignItems: 'stretch'
-}
+({
+  alignItems: 'stretch',
+  ...styles
+})
 ```
 
 ### items-baseline
@@ -515,9 +555,10 @@ Aligns items along the baseline
 Changes:
 
 ```js
-{
-  alignItems: 'baseline'
-}
+({
+  alignItems: 'baseline',
+  ...styles
+})
 ```
 
 ### align-self-auto
@@ -527,9 +568,10 @@ Sets the default alignment for the item
 Changes:
 
 ```js
-{
-  alignSelf: 'auto'
-}
+({
+  alignSelf: 'auto',
+  ...styles
+})
 ```
 
 ### align-self-start
@@ -539,9 +581,10 @@ Sets the default alignment for the item
 Changes:
 
 ```js
-{
-  alignSelf: 'start'
-}
+({
+  alignSelf: 'start',
+  ...styles
+})
 ```
 
 ### align-self-end
@@ -551,9 +594,10 @@ Sets the default alignment for the item
 Changes:
 
 ```js
-{
-  alignSelf: 'end'
-}
+({
+  alignSelf: 'end',
+  ...styles
+})
 ```
 
 ### align-self-center
@@ -563,9 +607,10 @@ Sets the default alignment for the item
 Changes:
 
 ```js
-{
-  alignSelf: 'center'
-}
+({
+  alignSelf: 'center',
+  ...styles
+})
 ```
 
 ### align-self-stretch
@@ -575,9 +620,10 @@ Sets the default alignment for the item
 Changes:
 
 ```js
-{
-  alignSelf: 'stretch'
-}
+({
+  alignSelf: 'stretch',
+  ...styles
+})
 ```
 
 ### align-self-baseline
@@ -587,9 +633,10 @@ Sets the default alignment for the item
 Changes:
 
 ```js
-{
-  alignSelf: 'baseline'
-}
+({
+  alignSelf: 'baseline',
+  ...styles
+})
 ```
 
 ## Utils for texts
@@ -598,14 +645,15 @@ Changes:
 
 Changes the font size of a text
 
-`size: number`
+``size: number``
 
 Changes:
 
 ```js
-{
-  fontSize: size
-}
+({
+  fontSize: size,
+  ...styles
+})
 ```
 
 ### text-xs
@@ -615,9 +663,10 @@ Changes the font size of a text
 Changes:
 
 ```js
-{
-  fontSize: 12
-}
+({
+  fontSize: 12,
+  ...styles
+})
 ```
 
 ### text-sm
@@ -627,9 +676,10 @@ Changes the font size of a text
 Changes:
 
 ```js
-{
-  fontSize: 14
-}
+({
+  fontSize: 14,
+  ...styles
+})
 ```
 
 ### text-md
@@ -639,9 +689,10 @@ Changes the font size of a text
 Changes:
 
 ```js
-{
-  fontSize: 16
-}
+({
+  fontSize: 16,
+  ...styles
+})
 ```
 
 ### text-lg
@@ -651,9 +702,10 @@ Changes the font size of a text
 Changes:
 
 ```js
-{
-  fontSize: 20
-}
+({
+  fontSize: 20,
+  ...styles
+})
 ```
 
 ### text-xl
@@ -663,9 +715,10 @@ Changes the font size of a text
 Changes:
 
 ```js
-{
-  fontSize: 24
-}
+({
+  fontSize: 24,
+  ...styles
+})
 ```
 
 ### text-2xl
@@ -675,9 +728,10 @@ Changes the font size of a text
 Changes:
 
 ```js
-{
-  fontSize: 30
-}
+({
+  fontSize: 30,
+  ...styles
+})
 ```
 
 ### text-3xl
@@ -687,9 +741,10 @@ Changes the font size of a text
 Changes:
 
 ```js
-{
-  fontSize: 40
-}
+({
+  fontSize: 40,
+  ...styles
+})
 ```
 
 ### text-4xl
@@ -699,9 +754,10 @@ Changes the font size of a text
 Changes:
 
 ```js
-{
-  fontSize: 50
-}
+({
+  fontSize: 50,
+  ...styles
+})
 ```
 
 ### italic
@@ -711,9 +767,10 @@ Makes the text italic
 Changes:
 
 ```js
-{
-  fontStyle: 'italic'
-}
+({
+  fontStyle: 'italic',
+  ...styles
+})
 ```
 
 ### not-italic
@@ -723,9 +780,10 @@ Makes the text normal (not italic)
 Changes:
 
 ```js
-{
-  fontStyle: 'normal'
-}
+({
+  fontStyle: 'normal',
+  ...styles
+})
 ```
 
 ### uppercase
@@ -735,9 +793,10 @@ Makes the text uppercase
 Changes:
 
 ```js
-{
-  textTransform: 'uppercase'
-}
+({
+  textTransform: 'uppercase',
+  ...styles
+})
 ```
 
 ### lowercase
@@ -747,9 +806,10 @@ Makes the text lowercase
 Changes:
 
 ```js
-{
-  textTransform: 'lowercase'
-}
+({
+  textTransform: 'lowercase',
+  ...styles
+})
 ```
 
 ### capitalize
@@ -759,9 +819,10 @@ Makes the text capitalized
 Changes:
 
 ```js
-{
-  textTransform: 'capitalize'
-}
+({
+  textTransform: 'capitalize',
+  ...styles
+})
 ```
 
 ### normal-case
@@ -771,9 +832,10 @@ Makes the text normal-cased
 Changes:
 
 ```js
-{
-  textTransform: 'none'
-}
+({
+  textTransform: 'none',
+  ...styles
+})
 ```
 
 ### font-thin
@@ -783,9 +845,10 @@ Sets the font weight of the text
 Changes:
 
 ```js
-{
-  fontWeight: '100'
-}
+({
+  fontWeight: '100',
+  ...styles
+})
 ```
 
 ### font-extralight
@@ -795,9 +858,10 @@ Sets the font weight of the text
 Changes:
 
 ```js
-{
-  fontWeight: '200'
-}
+({
+  fontWeight: '200',
+  ...styles
+})
 ```
 
 ### font-light
@@ -807,9 +871,10 @@ Sets the font weight of the text
 Changes:
 
 ```js
-{
-  fontWeight: '300'
-}
+({
+  fontWeight: '300',
+  ...styles
+})
 ```
 
 ### font-normal
@@ -819,9 +884,10 @@ Sets the font weight of the text
 Changes:
 
 ```js
-{
-  fontWeight: '400'
-}
+({
+  fontWeight: '400',
+  ...styles
+})
 ```
 
 ### font-medium
@@ -831,9 +897,10 @@ Sets the font weight of the text
 Changes:
 
 ```js
-{
-  fontWeight: '500'
-}
+({
+  fontWeight: '500',
+  ...styles
+})
 ```
 
 ### font-semibold
@@ -843,9 +910,10 @@ Sets the font weight of the text
 Changes:
 
 ```js
-{
-  fontWeight: '600'
-}
+({
+  fontWeight: '600',
+  ...styles
+})
 ```
 
 ### font-bold
@@ -855,9 +923,10 @@ Sets the font weight of the text
 Changes:
 
 ```js
-{
-  fontWeight: '700'
-}
+({
+  fontWeight: '700',
+  ...styles
+})
 ```
 
 ### font-extrabold
@@ -867,9 +936,10 @@ Sets the font weight of the text
 Changes:
 
 ```js
-{
-  fontWeight: '800'
-}
+({
+  fontWeight: '800',
+  ...styles
+})
 ```
 
 ### font-black
@@ -879,23 +949,25 @@ Sets the font weight of the text
 Changes:
 
 ```js
-{
-  fontWeight: '900'
-}
+({
+  fontWeight: '900',
+  ...styles
+})
 ```
 
 ### leading
 
 Sets the line height of the text
 
-`lineHeight: number`
+``lineHeight: number``
 
 Changes:
 
 ```js
-{
-  lineHeight: lineHeight
-}
+({
+  lineHeight: lineHeight,
+  ...styles
+})
 ```
 
 ### text-left
@@ -905,9 +977,10 @@ Sets the text align of the text
 Changes:
 
 ```js
-{
-  textAlign: 'left'
-}
+({
+  textAlign: 'left',
+  ...styles
+})
 ```
 
 ### text-center
@@ -917,9 +990,10 @@ Sets the text align of the text
 Changes:
 
 ```js
-{
-  textAlign: 'center'
-}
+({
+  textAlign: 'center',
+  ...styles
+})
 ```
 
 ### text-right
@@ -929,9 +1003,10 @@ Sets the text align of the text
 Changes:
 
 ```js
-{
-  textAlign: 'right'
-}
+({
+  textAlign: 'right',
+  ...styles
+})
 ```
 
 ### text-justify
@@ -941,9 +1016,10 @@ Sets the text align of the text
 Changes:
 
 ```js
-{
-  textAlign: 'justify'
-}
+({
+  textAlign: 'justify',
+  ...styles
+})
 ```
 
 ### underline
@@ -953,9 +1029,10 @@ Adds an underline to the text
 Changes:
 
 ```js
-{
-  textDecorationLine: 'underline'
-}
+({
+  textDecorationLine: 'underline',
+  ...styles
+})
 ```
 
 ### line-through
@@ -965,9 +1042,10 @@ Adds a line in the middle of the text
 Changes:
 
 ```js
-{
-  textDecorationLine: 'line-through'
-}
+({
+  textDecorationLine: 'line-through',
+  ...styles
+})
 ```
 
 ### no-underline
@@ -977,9 +1055,10 @@ Removes all lines from the text
 Changes:
 
 ```js
-{
-  textDecorationLine: 'none'
-}
+({
+  textDecorationLine: 'none',
+  ...styles
+})
 ```
 
 ## Other Utils
@@ -988,14 +1067,15 @@ Changes:
 
 Sets the aspect ratio
 
-`aspectRatio: number`
+``aspectRatio: number``
 
 Changes:
 
 ```js
-{
-  aspectRatio: aspectRatio
-}
+({
+  aspectRatio: aspectRatio,
+  ...styles
+})
 ```
 
 ### aspect-square
@@ -1005,9 +1085,10 @@ Makes the element a square
 Changes:
 
 ```js
-{
-  aspectRatio: 1
-}
+({
+  aspectRatio: 1,
+  ...styles
+})
 ```
 
 ### aspect-video
@@ -1017,9 +1098,10 @@ Makes the element video-shaped
 Changes:
 
 ```js
-{
-  aspectRatio: 16
-}
+({
+  aspectRatio: 16,
+  ...styles
+})
 ```
 
 ### dir-ltr
@@ -1029,9 +1111,10 @@ Changes the direction to left-to-right
 Changes:
 
 ```js
-{
-  direction: 'ltr'
-}
+({
+  direction: 'ltr',
+  ...styles
+})
 ```
 
 ### dir-rtl
@@ -1041,9 +1124,10 @@ Changes the direction to right-to-left
 Changes:
 
 ```js
-{
-  direction: 'rtl'
-}
+({
+  direction: 'rtl',
+  ...styles
+})
 ```
 
 ### overflow-visible
@@ -1053,9 +1137,10 @@ Changes overflow / how the element is measured and displayed
 Changes:
 
 ```js
-{
-  overflow: 'visible'
-}
+({
+  overflow: 'visible',
+  ...styles
+})
 ```
 
 ### overflow-hidden
@@ -1065,9 +1150,10 @@ Changes overflow / how the element is measured and displayed
 Changes:
 
 ```js
-{
-  overflow: 'hidden'
-}
+({
+  overflow: 'hidden',
+  ...styles
+})
 ```
 
 ### overflow-scroll
@@ -1077,9 +1163,55 @@ Changes overflow / how the element is measured and displayed
 Changes:
 
 ```js
-{
-  overflow: 'scroll'
-}
+({
+  overflow: 'scroll',
+  ...styles
+})
+```
+
+### scale
+
+Changes the scale of an element
+
+``scale: number``
+
+Changes:
+
+```js
+({
+  transform: [...transform, { scale: scale }],
+  ...styles
+})
+```
+
+### scale-x
+
+Changes the scale of an element
+
+``scaleX: number``
+
+Changes:
+
+```js
+({
+  transform: [...transform, { scaleX: scaleX }],
+  ...styles
+})
+```
+
+### scale-y
+
+Changes the scale of an element
+
+``scaleY: number``
+
+Changes:
+
+```js
+({
+  transform: [...transform, { scaleY: scaleY }],
+  ...styles
+})
 ```
 
 ## Position & Size Utils
@@ -1088,131 +1220,140 @@ Changes:
 
 Sets top, right, bottom, and left to the same value
 
-`inset: number | `${number}%``
+``inset: number | `${number}%```
 
 Changes:
 
 ```js
-{
+({
   top: inset,
   right: inset,
   bottom: inset,
-  left: inset
-}
+  left: inset,
+  ...styles
+})
 ```
 
 ### inset-x
 
 Sets left and right to the same value
 
-`insetX: number | `${number}%``
+``insetX: number | `${number}%```
 
 Changes:
 
 ```js
-{
+({
   left: insetX,
-  right: insetX
-}
+  right: insetX,
+  ...styles
+})
 ```
 
 ### inset-y
 
 Sets top and bottom to the same value
 
-`insetY: number | `${number}%``
+``insetY: number | `${number}%```
 
 Changes:
 
 ```js
-{
+({
   top: insetY,
-  bottom: insetY
-}
+  bottom: insetY,
+  ...styles
+})
 ```
 
 ### start
 
 Sets the start position
 
-`start: number | `${number}%``
+``start: number | `${number}%```
 
 Changes:
 
 ```js
-{
-  start: start
-}
+({
+  start: start,
+  ...styles
+})
 ```
 
 ### end
 
 Sets the end position
 
-`end: number | `${number}%``
+``end: number | `${number}%```
 
 Changes:
 
 ```js
-{
-  end: end
-}
+({
+  end: end,
+  ...styles
+})
 ```
 
 ### left
 
 Sets the left position
 
-`left: number | `${number}%``
+``left: number | `${number}%```
 
 Changes:
 
 ```js
-{
-  left: left
-}
+({
+  left: left,
+  ...styles
+})
 ```
 
 ### right
 
 Sets the right position
 
-`right: number | `${number}%``
+``right: number | `${number}%```
 
 Changes:
 
 ```js
-{
-  right: right
-}
+({
+  right: right,
+  ...styles
+})
 ```
 
 ### top
 
 Sets the top position
 
-`top: number | `${number}%``
+``top: number | `${number}%```
 
 Changes:
 
 ```js
-{
-  top: top
-}
+({
+  top: top,
+  ...styles
+})
 ```
 
 ### bottom
 
 Sets the bottom position
 
-`bottom: number | `${number}%``
+``bottom: number | `${number}%```
 
 Changes:
 
 ```js
-{
-  bottom: bottom
-}
+({
+  bottom: bottom,
+  ...styles
+})
 ```
 
 ### absolute
@@ -1222,9 +1363,10 @@ Sets position to 'absolute'
 Changes:
 
 ```js
-{
-  position: 'absolute'
-}
+({
+  position: 'absolute',
+  ...styles
+})
 ```
 
 ### relative
@@ -1234,37 +1376,40 @@ Sets position to 'relative'
 Changes:
 
 ```js
-{
-  position: 'relative'
-}
+({
+  position: 'relative',
+  ...styles
+})
 ```
 
 ### w
 
 Sets width
 
-`width: number | `${number}%``
+``width: number | `${number}%```
 
 Changes:
 
 ```js
-{
-  width: width
-}
+({
+  width: width,
+  ...styles
+})
 ```
 
 ### h
 
 Sets height
 
-`height: number | `${number}%``
+``height: number | `${number}%```
 
 Changes:
 
 ```js
-{
-  height: height
-}
+({
+  height: height,
+  ...styles
+})
 ```
 
 ### w-full
@@ -1274,9 +1419,10 @@ Sets width to '100%'
 Changes:
 
 ```js
-{
-  width: '100%'
-}
+({
+  width: '100%',
+  ...styles
+})
 ```
 
 ### h-full
@@ -1286,79 +1432,85 @@ Sets height to '100%'
 Changes:
 
 ```js
-{
-  height: '100%'
-}
+({
+  height: '100%',
+  ...styles
+})
 ```
 
 ### max-w
 
 Sets maximum width
 
-`maxWidth: number | `${number}%``
+``maxWidth: number | `${number}%```
 
 Changes:
 
 ```js
-{
-  maxWidth: maxWidth
-}
+({
+  maxWidth: maxWidth,
+  ...styles
+})
 ```
 
 ### max-h
 
 Sets maximum height
 
-`maxHeight: number | `${number}%``
+``maxHeight: number | `${number}%```
 
 Changes:
 
 ```js
-{
-  maxHeight: maxHeight
-}
+({
+  maxHeight: maxHeight,
+  ...styles
+})
 ```
 
 ### min-w
 
 Sets minimum width
 
-`minWidth: number | `${number}%``
+``minWidth: number | `${number}%```
 
 Changes:
 
 ```js
-{
-  minWidth: minWidth
-}
+({
+  minWidth: minWidth,
+  ...styles
+})
 ```
 
 ### min-h
 
 Sets minimum height
 
-`minHeight: number | `${number}%``
+``minHeight: number | `${number}%```
 
 Changes:
 
 ```js
-{
-  minHeight: minHeight
-}
+({
+  minHeight: minHeight,
+  ...styles
+})
 ```
 
 ### z
 
 Sets z-index
 
-`zIndex: number`
+``zIndex: number``
 
 Changes:
 
 ```js
-{
-  zIndex: zIndex
-}
+({
+  zIndex: zIndex,
+  ...styles
+})
 ```
 
 ## Utils for margin, padding & co
@@ -1367,294 +1519,315 @@ Changes:
 
 Sets padding for all sides
 
-`padding: number | `${number}%``
+``padding: number | `${number}%```
 
 Changes:
 
 ```js
-{
-  padding: padding
-}
+({
+  padding: padding,
+  ...styles
+})
 ```
 
 ### pt
 
 Sets paddingTop
 
-`paddingTop: number | `${number}%``
+``paddingTop: number | `${number}%```
 
 Changes:
 
 ```js
-{
-  paddingTop: paddingTop
-}
+({
+  paddingTop: paddingTop,
+  ...styles
+})
 ```
 
 ### pb
 
 Sets paddingBottom
 
-`paddingBottom: number | `${number}%``
+``paddingBottom: number | `${number}%```
 
 Changes:
 
 ```js
-{
-  paddingBottom: paddingBottom
-}
+({
+  paddingBottom: paddingBottom,
+  ...styles
+})
 ```
 
 ### pl
 
 Sets paddingLeft
 
-`paddingLeft: number | `${number}%``
+``paddingLeft: number | `${number}%```
 
 Changes:
 
 ```js
-{
-  paddingLeft: paddingLeft
-}
+({
+  paddingLeft: paddingLeft,
+  ...styles
+})
 ```
 
 ### pr
 
 Sets paddingRight
 
-`paddingRight: number | `${number}%``
+``paddingRight: number | `${number}%```
 
 Changes:
 
 ```js
-{
-  paddingRight: paddingRight
-}
+({
+  paddingRight: paddingRight,
+  ...styles
+})
 ```
 
 ### ps
 
 Sets paddingStart
 
-`paddingStart: number | `${number}%``
+``paddingStart: number | `${number}%```
 
 Changes:
 
 ```js
-{
-  paddingStart: paddingStart
-}
+({
+  paddingStart: paddingStart,
+  ...styles
+})
 ```
 
 ### pe
 
 Sets paddingEnd
 
-`paddingEnd: number | `${number}%``
+``paddingEnd: number | `${number}%```
 
 Changes:
 
 ```js
-{
-  paddingEnd: paddingEnd
-}
+({
+  paddingEnd: paddingEnd,
+  ...styles
+})
 ```
 
 ### px
 
 Sets horizontal padding (left and right)
 
-`paddingHorizontal: number | `${number}%``
+``paddingHorizontal: number | `${number}%```
 
 Changes:
 
 ```js
-{
-  paddingHorizontal: paddingHorizontal
-}
+({
+  paddingHorizontal: paddingHorizontal,
+  ...styles
+})
 ```
 
 ### py
 
 Sets vertical padding (top and bottom)
 
-`paddingVertical: number | `${number}%``
+``paddingVertical: number | `${number}%```
 
 Changes:
 
 ```js
-{
-  paddingVertical: paddingVertical
-}
+({
+  paddingVertical: paddingVertical,
+  ...styles
+})
 ```
 
 ### m
 
 Sets margin for all sides
 
-`margin: number | `${number}%``
+``margin: number | `${number}%```
 
 Changes:
 
 ```js
-{
-  margin: margin
-}
+({
+  margin: margin,
+  ...styles
+})
 ```
 
 ### mt
 
 Sets margin-top
 
-`marginTop: number | `${number}%``
+``marginTop: number | `${number}%```
 
 Changes:
 
 ```js
-{
-  marginTop: marginTop
-}
+({
+  marginTop: marginTop,
+  ...styles
+})
 ```
 
 ### mb
 
 Sets margin-bottom
 
-`marginBottom: number | `${number}%``
+``marginBottom: number | `${number}%```
 
 Changes:
 
 ```js
-{
-  marginBottom: marginBottom
-}
+({
+  marginBottom: marginBottom,
+  ...styles
+})
 ```
 
 ### ml
 
 Sets margin-left
 
-`marginLeft: number | `${number}%``
+``marginLeft: number | `${number}%```
 
 Changes:
 
 ```js
-{
-  marginLeft: marginLeft
-}
+({
+  marginLeft: marginLeft,
+  ...styles
+})
 ```
 
 ### mr
 
 Sets margin-right
 
-`marginRight: number | `${number}%``
+``marginRight: number | `${number}%```
 
 Changes:
 
 ```js
-{
-  marginRight: marginRight
-}
+({
+  marginRight: marginRight,
+  ...styles
+})
 ```
 
 ### ms
 
 Sets margin-start
 
-`marginStart: number | `${number}%``
+``marginStart: number | `${number}%```
 
 Changes:
 
 ```js
-{
-  marginStart: marginStart
-}
+({
+  marginStart: marginStart,
+  ...styles
+})
 ```
 
 ### me
 
 Sets margin-end
 
-`marginEnd: number | `${number}%``
+``marginEnd: number | `${number}%```
 
 Changes:
 
 ```js
-{
-  marginEnd: marginEnd
-}
+({
+  marginEnd: marginEnd,
+  ...styles
+})
 ```
 
 ### mx
 
 Sets horizontal margin (left and right)
 
-`marginHorizontal: number | `${number}%``
+``marginHorizontal: number | `${number}%```
 
 Changes:
 
 ```js
-{
-  marginHorizontal: marginHorizontal
-}
+({
+  marginHorizontal: marginHorizontal,
+  ...styles
+})
 ```
 
 ### my
 
 Sets vertical margin (top and bottom)
 
-`marginVertical: number | `${number}%``
+``marginVertical: number | `${number}%```
 
 Changes:
 
 ```js
-{
-  marginVertical: marginVertical
-}
+({
+  marginVertical: marginVertical,
+  ...styles
+})
 ```
 
 ### gap
 
 Sets the gap between elements
 
-`gap: number`
+``gap: number``
 
 Changes:
 
 ```js
-{
-  gap: gap
-}
+({
+  gap: gap,
+  ...styles
+})
 ```
 
 ### gap-x
 
 Sets the gap between columns
 
-`columnGap: number`
+``columnGap: number``
 
 Changes:
 
 ```js
-{
-  columnGap: columnGap
-}
+({
+  columnGap: columnGap,
+  ...styles
+})
 ```
 
 ### gap-y
 
 Sets the gap between rows
 
-`rowGap: number`
+``rowGap: number``
 
 Changes:
 
 ```js
-{
-  rowGap: rowGap
-}
+({
+  rowGap: rowGap,
+  ...styles
+})
 ```
 
 ## Utils for borders
@@ -1663,14 +1836,15 @@ Changes:
 
 Sets border radius
 
-`borderRadius: true | number`
+``borderRadius: true | number``
 
 Changes:
 
 ```js
-{
-  borderRadius: borderRadius
-}
+({
+  borderRadius: borderRadius,
+  ...styles
+})
 ```
 
 ### rounded-md
@@ -1680,9 +1854,10 @@ Sets border radius to medium
 Changes:
 
 ```js
-{
-  borderRadius: 15
-}
+({
+  borderRadius: 15,
+  ...styles
+})
 ```
 
 ### rounded-lg
@@ -1692,9 +1867,10 @@ Sets border radius to large
 Changes:
 
 ```js
-{
-  borderRadius: 20
-}
+({
+  borderRadius: 20,
+  ...styles
+})
 ```
 
 ### rounded-xl
@@ -1704,9 +1880,10 @@ Sets border radius to extra large
 Changes:
 
 ```js
-{
-  borderRadius: 30
-}
+({
+  borderRadius: 30,
+  ...styles
+})
 ```
 
 ### rounded-full
@@ -1716,177 +1893,190 @@ Sets border radius to full circle
 Changes:
 
 ```js
-{
-  borderRadius: 9999
-}
+({
+  borderRadius: 9999,
+  ...styles
+})
 ```
 
 ### rounded-tl
 
 Sets border radius for the top-left corner
 
-`borderTopLeftRadius: number`
+``borderTopLeftRadius: number``
 
 Changes:
 
 ```js
-{
-  borderTopLeftRadius: borderTopLeftRadius
-}
+({
+  borderTopLeftRadius: borderTopLeftRadius,
+  ...styles
+})
 ```
 
 ### rounded-tr
 
 Sets border radius for the top-right corner
 
-`borderTopRightRadius: number`
+``borderTopRightRadius: number``
 
 Changes:
 
 ```js
-{
-  borderTopRightRadius: borderTopRightRadius
-}
+({
+  borderTopRightRadius: borderTopRightRadius,
+  ...styles
+})
 ```
 
 ### rounded-bl
 
 Sets border radius for the bottom-left corner
 
-`borderBottomLeftRadius: number`
+``borderBottomLeftRadius: number``
 
 Changes:
 
 ```js
-{
-  borderBottomLeftRadius: borderBottomLeftRadius
-}
+({
+  borderBottomLeftRadius: borderBottomLeftRadius,
+  ...styles
+})
 ```
 
 ### rounded-br
 
 Sets border radius for the bottom-right corner
 
-`borderBottomRightRadius: number`
+``borderBottomRightRadius: number``
 
 Changes:
 
 ```js
-{
-  borderBottomRightRadius: borderBottomRightRadius
-}
+({
+  borderBottomRightRadius: borderBottomRightRadius,
+  ...styles
+})
 ```
 
 ### border
 
 Sets the width of the border to a specified number or 1
 
-`borderWidth: true | number`
+``borderWidth: true | number``
 
 Changes:
 
 ```js
-{
-  borderWidth: borderWidth
-}
+({
+  borderWidth: borderWidth,
+  ...styles
+})
 ```
 
 ### border-x
 
 Sets the width of the border on the left & right side
 
-`borderWidth: number`
+``borderWidth: number``
 
 Changes:
 
 ```js
-{
+({
   borderLeftWidth: borderWidth,
-  borderRightWidth: borderWidth
-}
+  borderRightWidth: borderWidth,
+  ...styles
+})
 ```
 
 ### border-y
 
 Sets the width of the border on the top & bottom side
 
-`borderWidth: number`
+``borderWidth: number``
 
 Changes:
 
 ```js
-{
+({
   borderTopWidth: borderWidth,
-  borderBottomWidth: borderWidth
-}
+  borderBottomWidth: borderWidth,
+  ...styles
+})
 ```
 
 ### border-l
 
 Sets the width of the border on the left side
 
-`borderLeftWidth: number`
+``borderLeftWidth: number``
 
 Changes:
 
 ```js
-{
-  borderLeftWidth: borderLeftWidth
-}
+({
+  borderLeftWidth: borderLeftWidth,
+  ...styles
+})
 ```
 
 ### border-r
 
 Sets the width of the border on the right side
 
-`borderRightWidth: number`
+``borderRightWidth: number``
 
 Changes:
 
 ```js
-{
-  borderRightWidth: borderRightWidth
-}
+({
+  borderRightWidth: borderRightWidth,
+  ...styles
+})
 ```
 
 ### border-t
 
 Sets the width of the border on the top side
 
-`borderTopWidth: number`
+``borderTopWidth: number``
 
 Changes:
 
 ```js
-{
-  borderTopWidth: borderTopWidth
-}
+({
+  borderTopWidth: borderTopWidth,
+  ...styles
+})
 ```
 
 ### border-b
 
 Sets the width of the border on the bottom side
 
-`borderBottomWidth: number`
+``borderBottomWidth: number``
 
 Changes:
 
 ```js
-{
-  borderBottomWidth: borderBottomWidth
-}
+({
+  borderBottomWidth: borderBottomWidth,
+  ...styles
+})
 ```
 
 ### border-color
 
 Sets the color of the border
 
-`borderColor: string`
+``borderColor: string``
 
 Changes:
 
 ```js
-{
-  borderColor: colors
-}
+({
+  borderColor: colors[borderColor],
+  ...styles
+})
 ```

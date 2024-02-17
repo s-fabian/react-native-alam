@@ -24,10 +24,10 @@
     "!**/.*"
   ],
   "scripts": {
-    "test": "tsc --noEmit && prettier --check src docs.mjs",
+    "test": "tsc --noEmit && prettier --check src docs.mjs ATTR.md",
     "clean": "del-cli lib",
     "release": "release-it",
-    "format": "prettier --write src docs.mjs",
+    "format": "prettier --write src docs.mjs ATTR.md",
     "docs": "node docs.mjs"
   },
   "keywords": [

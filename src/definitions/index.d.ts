@@ -173,6 +173,12 @@ export interface DefaultProps {
   'overflow-hidden'?: true;
   // Changes overflow / how the element is measured and displayed
   'overflow-scroll'?: true;
+  // Changes the scale of an element
+  scale?: number;
+  // Changes the scale of an element
+  'scale-x'?: number;
+  // Changes the scale of an element
+  'scale-y'?: number;
   // Sets top, right, bottom, and left to the same value
   inset?: number | `${number}%`;
   // Sets left and right to the same value
