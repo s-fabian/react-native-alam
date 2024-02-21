@@ -4,7 +4,14 @@ import type { Ref } from 'react';
 
 type StyleBase = any;
 export type Style = StyleBase | ImageStyle | TextStyle | ViewStyle;
-export type Color = string;
+export type Color =
+  | string
+  | 'primary'
+  | 'background'
+  | 'card'
+  | 'text'
+  | 'border'
+  | 'notification';
 export type Colors = Record<Color, string>;
 
 export type { DefaultAlam, Style as StyleHelp };
