@@ -1,6 +1,7 @@
 import type { ImageStyle, TextStyle, ViewStyle } from 'react-native';
 import type { DefaultAlam, DefaultProps } from '.';
 import type { Ref } from 'react';
+import type { Colord } from 'colord';
 
 type StyleBase = any;
 export type Style = StyleBase | ImageStyle | TextStyle | ViewStyle;
@@ -12,7 +13,11 @@ export type Color =
   | 'text'
   | 'border'
   | 'notification';
-export type Colors = Record<Color, string>;
+export type DynColor = Color | Colord;
+export type Colors = Record<ColorBase, string>;
+export type DynColors = Omit<Colors, 'resolve'> & {
+  resolve(c: DynColor): string | undefined;
+};
 
 export type { DefaultAlam, Style as StyleHelp };
 
@@ -63,12 +68,12 @@ export type InputFunction<FunctionProps, ReturnType> = (
 export type OutputFunction<
   FunctionProps,
   ReturnType,
-  AlamProps extends Record<string, any>
+  AlamProps extends Record<string, any>,
 > = (props: AddPrefixAndDefault<AlamProps> & FunctionProps) => ReturnType;
 
 export type FunctionType<AlamProps extends Record<string, any>> = <
   FunctionProps,
-  ReturnType
+  ReturnType,
 >(
   component: InputFunction<FunctionProps, ReturnType>
 ) => OutputFunction<FunctionProps, ReturnType, AlamProps>;

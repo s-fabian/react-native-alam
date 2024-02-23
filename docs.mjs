@@ -5,6 +5,10 @@ import { readFile, writeFile } from 'node:fs/promises';
 const regex =
   /[\s\n]*\/\/-n \w(\w|-)*[\s\n]*\/\/-d (\w).*[\s\n]*(\/\/-i \w+\s*:\s*\w(\w|`|\{|}|\$|%| |\|)*)?[\s\n]*(\/\/-o (\w|\.|\[|])+:\s*\'?(\w|-|\[|]|\{|}|:| |,|%|#|\.)+'?[\s\n]*)+/g;
 
+const imports = {
+  colord: '{ Colord }',
+};
+
 const tsFiles = {
   'colors.ts': 'Color Utils',
   'display.ts': 'Utils for flex & co',
@@ -31,7 +35,14 @@ let readme = '# Attributes for `react-native-alam`';
 readme +=
   '\n\nTip: Click the list icon at the to right to search for properties / alams';
 
-let dTs = 'export interface DefaultProps {';
+let dTs = '';
+
+for (const namespace in imports) {
+  const value = imports[namespace];
+  dTs += `import type ${value} from '${namespace}';\n`;
+}
+
+dTs += '\nexport interface DefaultProps {';
 
 for (const fileName in tsFiles) {
   const title = tsFiles[fileName];

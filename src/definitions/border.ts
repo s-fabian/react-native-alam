@@ -1,4 +1,4 @@
-import type { Color, Colors, StyleHelp } from '../types';
+import type { DynColor, DynColors, StyleHelp } from '../types';
 
 export default {
   // borderRadius
@@ -148,10 +148,14 @@ export default {
 
   //-n border-color
   //-d Sets the color of the border
-  //-i borderColor: string
+  //-i borderColor: string | Colord
   //-o borderColor: colors[borderColor]
-  'border-color': (borderColor: Color, style: StyleHelp, colors: Colors) => ({
-    borderColor: colors[borderColor],
+  'border-color': (
+    borderColor: DynColor,
+    style: StyleHelp,
+    colors: DynColors
+  ) => ({
+    borderColor: colors.resolve(borderColor),
     ...style,
   }),
 } as const;

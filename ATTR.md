@@ -8,7 +8,7 @@ Tip: Click the list icon at the to right to search for properties / alams
 
 Changes the text color of an element
 
-`color: string`
+`color: string | Colord`
 
 Changes:
 
@@ -23,7 +23,7 @@ Changes:
 
 Changes the background color of an element
 
-`color: string`
+`color: string | Colord`
 
 Changes:
 
@@ -2070,7 +2070,7 @@ Changes:
 
 Sets the color of the border
 
-`borderColor: string`
+`borderColor: string | Colord`
 
 Changes:
 

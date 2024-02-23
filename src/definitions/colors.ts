@@ -1,20 +1,20 @@
-import type { Color, Colors, StyleHelp } from '../types';
+import type { DynColor, DynColors, StyleHelp } from '../types';
 
 export default {
   //-n color
   //-d Changes the text color of an element
-  //-i color: string
+  //-i color: string | Colord
   //-o color: colors[color]
-  color: (color: Color, style: StyleHelp, colors: Colors) => ({
-    color: colors[color],
+  color: (color: DynColor, style: StyleHelp, colors: DynColors) => ({
+    color: colors.resolve(color),
     ...style,
   }),
   //-n bg
   //-d Changes the background color of an element
-  //-i color: string
+  //-i color: string | Colord
   //-o backgroundColor: colors[color]
-  bg: (color: Color, style: StyleHelp, colors: Colors) => ({
-    backgroundColor: colors[color],
+  bg: (color: DynColor, style: StyleHelp, colors: DynColors) => ({
+    backgroundColor: colors.resolve(color),
     ...style,
   }),
   //-n opacity

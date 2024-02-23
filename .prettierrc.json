@@ -4,5 +4,6 @@
   "singleQuote": true,
   "filepath": "src/**/*",
   "bracketSameLine": true,
-  "endOfLine": "auto"
+  "endOfLine": "auto",
+  "trailingComma": "es5"
 }

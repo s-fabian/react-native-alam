@@ -1,8 +1,10 @@
+import type { Colord } from 'colord';
+
 export interface DefaultProps {
   // Changes the text color of an element
-  color?: string;
+  color?: string | Colord;
   // Changes the background color of an element
-  bg?: string;
+  bg?: string | Colord;
   // Changes the opacity of an element
   opacity?: number;
   // Add a shadow to the element
@@ -294,5 +296,5 @@ export interface DefaultProps {
   // Sets the width of the border on the bottom side
   'border-b'?: number;
   // Sets the color of the border
-  'border-color'?: string;
+  'border-color'?: string | Colord;
 }
