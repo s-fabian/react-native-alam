@@ -65,9 +65,9 @@
     "@types/react": "17.0.21"
   },
   "peerDependencies": {
+    "colord": "*",
     "react": "*",
-    "react-native": "*",
-    "colord": "*"
+    "react-native": "*"
   },
   "packageManager": "yarn@3.6.1",
   "engines": {
