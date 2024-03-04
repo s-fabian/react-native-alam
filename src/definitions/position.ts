@@ -129,6 +129,17 @@ export default {
     ...style,
   }),
 
+  //-n area
+  //-d Sets width & height
+  //-i area: number | `${number}%`
+  //-o width: area
+  //-o height: area
+  area: (area: number | `${number}%`, style: StyleHelp) => ({
+    width: area,
+    height: area,
+    ...style,
+  }),
+
   //-n w-full
   //-d Sets width to '100%'
   //-o width: '100%'

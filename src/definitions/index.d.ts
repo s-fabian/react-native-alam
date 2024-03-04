@@ -207,6 +207,8 @@ export interface DefaultProps {
   w?: number | `${number}%`;
   // Sets height
   h?: number | `${number}%`;
+  // Sets width & height
+  area?: number | `${number}%`;
   // Sets width to '100%'
   'w-full'?: true;
   // Sets height to '100%'

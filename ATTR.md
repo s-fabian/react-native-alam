@@ -1412,6 +1412,22 @@ Changes:
 });
 ```
 
+### area
+
+Sets width & height
+
+``area: number | `${number}%```
+
+Changes:
+
+```js
+({
+  width: area,
+  height: area,
+  ...styles,
+});
+```
+
 ### w-full
 
 Sets width to '100%'
