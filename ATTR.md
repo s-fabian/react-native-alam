@@ -49,6 +49,21 @@ Changes:
 });
 ```
 
+### elevation
+
+Add a shadow to the element (android)
+
+`elevation: number`
+
+Changes:
+
+```js
+({
+  elevation: elevation,
+  ...styles,
+});
+```
+
 ### shadow
 
 Add a shadow to the element

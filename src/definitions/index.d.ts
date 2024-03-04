@@ -7,6 +7,8 @@ export interface DefaultProps {
   bg?: string | Colord;
   // Changes the opacity of an element
   opacity?: number;
+  // Add a shadow to the element (android)
+  elevation?: number;
   // Add a shadow to the element
   shadow?: true;
   // Add a shadow to the element

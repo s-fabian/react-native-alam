@@ -25,6 +25,16 @@ export default {
     opacity,
     ...style,
   }),
+
+  //-n elevation
+  //-d Add a shadow to the element (android)
+  //-i elevation: number
+  //-o elevation: elevation
+  elevation: (elevation: number, style: StyleHelp) => ({
+    elevation,
+    ...style,
+  }),
+
   //-n shadow
   //-d Add a shadow to the element
   //-o shadowColor: '#000000'
@@ -42,6 +52,7 @@ export default {
     shadowRadius: 10.0,
     ...style,
   }),
+
   //-n shadow-md
   //-d Add a shadow to the element
   //-o shadowColor: '#000000'
