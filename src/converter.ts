@@ -1,4 +1,4 @@
-import { useWindowDimensions } from 'react-native';
+import { Platform, useWindowDimensions } from 'react-native';
 import {
   type FunctionType,
   type GetFn,
@@ -23,6 +23,7 @@ interface StripPrefixResult {
   where?: StylePrefix;
   breakpoint?: ResponsiveUnits;
   lowerOrLesser?: 'min' | 'max';
+  platform?: 'android' | 'ios';
   className?: string;
 }
 
@@ -36,7 +37,21 @@ function getPrefix(from: string): StripPrefixResult | undefined {
     if (!prefix) return;
 
     switch (prefix) {
-      case 'max': {
+      case 'ios':
+      case 'android': {
+        if (result.where || result.breakpoint || result.lowerOrLesser) {
+          result.className = iter.length
+            ? prefix + '-' + iter.reverse().join('-')
+            : prefix;
+
+          break loop;
+        }
+
+        result.platform = prefix;
+        break;
+      }
+
+      case 'min': {
         if (result.where || result.breakpoint) {
           result.className = iter.length
             ? prefix + '-' + iter.reverse().join('-')
@@ -133,6 +148,7 @@ export function converter<AlamProps extends Record<string, any>>(
     return (props) => {
       const colors = useTheme();
       const { width } = useWindowDimensions();
+      const { OS: os } = Platform;
 
       let style: StyleHelp = {};
       let ccStyle: StyleHelp = {};
@@ -157,6 +173,7 @@ export function converter<AlamProps extends Record<string, any>>(
             breakpoint,
             lowerOrLesser = 'min',
             where = 'style',
+            platform,
           } = conditional;
 
           if (!className) continue;
@@ -171,6 +188,10 @@ export function converter<AlamProps extends Record<string, any>>(
             }
           } else {
             applies = true;
+          }
+
+          if (platform !== undefined && platform !== os) {
+            applies = false;
           }
 
           if (!applies) continue;

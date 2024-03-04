@@ -1,5 +1,5 @@
 import type { ImageStyle, TextStyle, ViewStyle } from 'react-native';
-import type { DefaultAlam, DefaultProps } from '.';
+import type { DefaultProps } from '.';
 import type { Ref } from 'react';
 import type { Colord } from 'colord';
 
@@ -14,12 +14,12 @@ export type Color =
   | 'border'
   | 'notification';
 export type DynColor = Color | Colord;
-export type Colors = Record<ColorBase, string>;
+export type Colors = Record<Color, string>;
 export type DynColors = Omit<Colors, 'resolve'> & {
   resolve(c: DynColor): string | undefined;
 };
 
-export type { DefaultAlam, Style as StyleHelp };
+export type { DefaultProps, Style as StyleHelp };
 
 export type AlamDef = Record<
   string,
@@ -40,9 +40,13 @@ export type GetFn<T extends Record<string, unknown>> = {
   ) => Style;
 };
 
+export type PlatformPrefix = 'android' | 'ios';
+
+type Platform<V extends string> = `${PlatformPrefix}-${V}` | V;
+
 export type StylePrefix = 'inner' | 'cc';
 
-type Styled<V> = `${StylePrefix}-${V}` | V;
+type Styled<V extends string> = `${StylePrefix}-${V}` | V;
 
 export type ResponsiveUnits = 'sm' | 'md' | 'lg' | 'xl';
 
@@ -53,10 +57,10 @@ type ResponsiveMinMax<V extends string> =
 
 type Responsive<V extends string> = ResponsiveMinMax<V> | V;
 
-export type AllPrefixes<V> = Responsive<Styled<V>>;
+export type AllPrefixes<V extends string> = Platform<Responsive<Styled<V>>>;
 
 export type AddPrefixes<T extends Record<string, unknown>> = {
-  [K in keyof T as AllPrefixes<K>]: T[K];
+  [K in keyof T & string as AllPrefixes<K>]: T[K];
 };
 
 export type AddPrefixAndDefault<A extends Record<string, unknown>> =
