@@ -82,8 +82,9 @@ interface AlamInterface<AlamProps extends Record<string, unknown>> {
     component: (props: FunctionProps) => any
   ): (props: AlamProps & FunctionProps) => any;
 
-  // add this as a property to a style object
-  // to make them be applied _after_ the alam props
+  /** add this as a property to a style object
+   * to make them be applied _after_ the alam props
+   * @deprecated Please use the alam-important property instead */
   Important: symbol;
 }
 

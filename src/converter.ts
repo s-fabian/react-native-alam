@@ -2,6 +2,7 @@ import { Platform, useWindowDimensions } from 'react-native';
 import {
   type FunctionType,
   type GetFn,
+  type ImportantProps,
   type InputFunction,
   type OutputFunction,
   type ResponsiveUnits,
@@ -104,7 +105,8 @@ function getPrefix(from: string): StripPrefixResult | undefined {
 function makeProps<V extends PropertyKey>(
   props: unknown,
   style: Record<PropertyKey, any> | null,
-  key: V
+  key: V,
+  styleImportantOverride?: boolean
 ): Record<PropertyKey, any> | undefined {
   if (
     typeof props === 'object' &&
@@ -115,6 +117,7 @@ function makeProps<V extends PropertyKey>(
   ) {
     if (style) {
       const styleImportant =
+        styleImportantOverride ||
         (props as { style: any })['style'][Important] !== undefined;
 
       return styleImportant
@@ -154,11 +157,21 @@ export function converter<AlamProps extends Record<string, any>>(
       let ccStyle: StyleHelp = {};
       let innerStyle: StyleHelp = {};
 
+      let styleImportant: Record<keyof ImportantProps, boolean> = {
+        'inner-alam-important': false,
+        'cc-alam-important': false,
+        'alam-important': false,
+      };
+
       for (const [key, value] of Object.entries(props) as Array<
         [string, any]
       >) {
         if (value === undefined) continue;
         if (typeof value === 'function') continue;
+
+        if (key in styleImportant) {
+          styleImportant[key] = true;
+        }
 
         if (key in attributes) {
           style = attributes[key]!(value, style, colors);
@@ -219,13 +232,24 @@ export function converter<AlamProps extends Record<string, any>>(
 
       const result = {
         ...props,
-        style: makeProps(props, style, 'style'),
+        style: makeProps(
+          props,
+          style,
+          'style',
+          styleImportant['alam-important']
+        ),
         contentContainerStyle: makeProps(
           props,
           ccStyle,
-          'contentContainerStyle'
+          'contentContainerStyle',
+          styleImportant['cc-alam-important']
         ),
-        innerStyle: makeProps(props, innerStyle, 'innerStyle'),
+        innerStyle: makeProps(
+          props,
+          innerStyle,
+          'innerStyle',
+          styleImportant['inner-alam-important']
+        ),
       };
 
       return component(result);
