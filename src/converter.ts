@@ -170,7 +170,7 @@ export function converter<AlamProps extends Record<string, any>>(
         if (typeof value === 'function') continue;
 
         if (key in styleImportant) {
-          styleImportant[key] = true;
+          styleImportant[key as keyof ImportantProps] = true;
         }
 
         if (key in attributes) {
