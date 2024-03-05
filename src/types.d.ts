@@ -67,11 +67,9 @@ export type ImportantProps = {
   [k in `${StylePrefix}-alam-important` | 'alam-important']?: true;
 };
 
-export type AddPrefixAndDefault<A extends Record<string, unknown>> =
-  Partial<A> &
-    DefaultProps &
-    AddPrefixes<Partial<A> & DefaultProps> &
-    ImportantProps;
+export type AddPrefixAndDefault<A extends Record<string, unknown>> = Partial<
+  A & DefaultProps & AddPrefixes<Partial<A> & DefaultProps> & ImportantProps
+>;
 
 export type InputFunction<FunctionProps, ReturnType> = (
   props: FunctionProps
