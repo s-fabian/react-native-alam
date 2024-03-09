@@ -148,7 +148,7 @@ export function converter<AlamProps extends Record<string, any>>(
       ...attr,
     } as GetFn<InnerAlamProps & DefaultProps>;
 
-    return (props) => {
+    return ({ ...props }) => {
       const colors = useTheme();
       const { width } = useWindowDimensions();
       const { OS: os } = Platform;
@@ -163,7 +163,7 @@ export function converter<AlamProps extends Record<string, any>>(
         'alam-important': false,
       };
 
-      for (const [key, value] of Object.entries(props) as Array<
+      for (const [key, value] of Object.entries(props).reverse() as Array<
         [string, any]
       >) {
         if (value === undefined) continue;
