@@ -14,6 +14,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
+      - name: Install yarn
+        run: npm install -g yarn
+
       - name: Cache dependencies
         id: yarn-cache
         uses: actions/cache@v3
