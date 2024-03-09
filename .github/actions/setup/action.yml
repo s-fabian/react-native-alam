@@ -13,10 +13,6 @@ runs:
       run: corepack enable
       shell: bash
 
-    - name: TEST
-      run: yarn config get enableImmutableInstalls
-      shell: bash
-
     - name: Cache dependencies
       id: yarn-cache
       uses: actions/cache@v3
@@ -31,5 +27,5 @@ runs:
 
     - name: Install dependencies
       if: steps.yarn-cache.outputs.cache-hit != 'true'
-      run: yarn install --force
+      run: yarn install --mode=update-lockfile --no-immutable
       shell: bash
