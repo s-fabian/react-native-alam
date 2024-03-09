@@ -13,9 +13,9 @@ runs:
       run: corepack enable
       shell: bash
 
-#    - name: Install yarn
-#      run: npm install -g yarn
-#      shell: bash
+    - name: TEST
+      run: yarn config get enableImmutableInstalls
+      shell: bash
 
     - name: Cache dependencies
       id: yarn-cache
@@ -31,5 +31,5 @@ runs:
 
     - name: Install dependencies
       if: steps.yarn-cache.outputs.cache-hit != 'true'
-      run: yarn install
+      run: yarn install --force
       shell: bash
