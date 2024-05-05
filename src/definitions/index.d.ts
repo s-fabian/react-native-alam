@@ -97,6 +97,8 @@ export interface DefaultProps {
   'align-self-stretch'?: true;
   // Sets the default alignment for the item
   'align-self-baseline'?: true;
+  // Changes the font family
+  font?: string;
   // Changes the font size of a text
   text?: number;
   // Changes the font size of a text

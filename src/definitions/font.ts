@@ -1,6 +1,15 @@
 import type { StyleHelp } from '../types';
 
 export default {
+  //-n font
+  //-d Changes the font family
+  //-i family: string
+  //-o fontFamily: string
+  font: (family: string, style: StyleHelp) => ({
+    fontFamily: family,
+    ...style,
+  }),
+
   //-n text
   //-d Changes the font size of a text
   //-i size: number

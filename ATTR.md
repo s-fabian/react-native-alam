@@ -656,6 +656,21 @@ Changes:
 
 ## Utils for texts
 
+### font
+
+Changes the font family
+
+`family: string`
+
+Changes:
+
+```js
+({
+  fontFamily: string,
+  ...styles,
+});
+```
+
 ### text
 
 Changes the font size of a text
