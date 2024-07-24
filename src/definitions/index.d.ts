@@ -228,41 +228,41 @@ export interface DefaultProps {
   // Sets z-index
   z?: number;
   // Sets padding for all sides
-  p?: number | `${number}%`;
+  p?: number | `${number}%` | 'auto';
   // Sets paddingTop
-  pt?: number | `${number}%`;
+  pt?: number | `${number}%` | 'auto';
   // Sets paddingBottom
-  pb?: number | `${number}%`;
+  pb?: number | `${number}%` | 'auto';
   // Sets paddingLeft
-  pl?: number | `${number}%`;
+  pl?: number | `${number}%` | 'auto';
   // Sets paddingRight
-  pr?: number | `${number}%`;
+  pr?: number | `${number}%` | 'auto';
   // Sets paddingStart
-  ps?: number | `${number}%`;
+  ps?: number | `${number}%` | 'auto';
   // Sets paddingEnd
-  pe?: number | `${number}%`;
+  pe?: number | `${number}%` | 'auto';
   // Sets horizontal padding (left and right)
-  px?: number | `${number}%`;
+  px?: number | `${number}%` | 'auto';
   // Sets vertical padding (top and bottom)
-  py?: number | `${number}%`;
+  py?: number | `${number}%` | 'auto';
   // Sets margin for all sides
-  m?: number | `${number}%`;
+  m?: number | `${number}%` | 'auto';
   // Sets margin-top
-  mt?: number | `${number}%`;
+  mt?: number | `${number}%` | 'auto';
   // Sets margin-bottom
-  mb?: number | `${number}%`;
+  mb?: number | `${number}%` | 'auto';
   // Sets margin-left
-  ml?: number | `${number}%`;
+  ml?: number | `${number}%` | 'auto';
   // Sets margin-right
-  mr?: number | `${number}%`;
+  mr?: number | `${number}%` | 'auto';
   // Sets margin-start
-  ms?: number | `${number}%`;
+  ms?: number | `${number}%` | 'auto';
   // Sets margin-end
-  me?: number | `${number}%`;
+  me?: number | `${number}%` | 'auto';
   // Sets horizontal margin (left and right)
-  mx?: number | `${number}%`;
+  mx?: number | `${number}%` | 'auto';
   // Sets vertical margin (top and bottom)
-  my?: number | `${number}%`;
+  my?: number | `${number}%` | 'auto';
   // Sets the gap between elements
   gap?: number;
   // Sets the gap between columns

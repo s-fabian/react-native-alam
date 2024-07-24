@@ -1565,7 +1565,7 @@ Changes:
 
 Sets padding for all sides
 
-``padding: number | `${number}%```
+``padding: number | `${number}%` | 'auto'``
 
 Changes:
 
@@ -1580,7 +1580,7 @@ Changes:
 
 Sets paddingTop
 
-``paddingTop: number | `${number}%```
+``paddingTop: number | `${number}%` | 'auto'``
 
 Changes:
 
@@ -1595,7 +1595,7 @@ Changes:
 
 Sets paddingBottom
 
-``paddingBottom: number | `${number}%```
+``paddingBottom: number | `${number}%` | 'auto'``
 
 Changes:
 
@@ -1610,7 +1610,7 @@ Changes:
 
 Sets paddingLeft
 
-``paddingLeft: number | `${number}%```
+``paddingLeft: number | `${number}%` | 'auto'``
 
 Changes:
 
@@ -1625,7 +1625,7 @@ Changes:
 
 Sets paddingRight
 
-``paddingRight: number | `${number}%```
+``paddingRight: number | `${number}%` | 'auto'``
 
 Changes:
 
@@ -1640,7 +1640,7 @@ Changes:
 
 Sets paddingStart
 
-``paddingStart: number | `${number}%```
+``paddingStart: number | `${number}%` | 'auto'``
 
 Changes:
 
@@ -1655,7 +1655,7 @@ Changes:
 
 Sets paddingEnd
 
-``paddingEnd: number | `${number}%```
+``paddingEnd: number | `${number}%` | 'auto'``
 
 Changes:
 
@@ -1670,7 +1670,7 @@ Changes:
 
 Sets horizontal padding (left and right)
 
-``paddingHorizontal: number | `${number}%```
+``paddingHorizontal: number | `${number}%` | 'auto'``
 
 Changes:
 
@@ -1685,7 +1685,7 @@ Changes:
 
 Sets vertical padding (top and bottom)
 
-``paddingVertical: number | `${number}%```
+``paddingVertical: number | `${number}%` | 'auto'``
 
 Changes:
 
@@ -1700,7 +1700,7 @@ Changes:
 
 Sets margin for all sides
 
-``margin: number | `${number}%```
+``margin: number | `${number}%` | 'auto'``
 
 Changes:
 
@@ -1715,7 +1715,7 @@ Changes:
 
 Sets margin-top
 
-``marginTop: number | `${number}%```
+``marginTop: number | `${number}%` | 'auto'``
 
 Changes:
 
@@ -1730,7 +1730,7 @@ Changes:
 
 Sets margin-bottom
 
-``marginBottom: number | `${number}%```
+``marginBottom: number | `${number}%` | 'auto'``
 
 Changes:
 
@@ -1745,7 +1745,7 @@ Changes:
 
 Sets margin-left
 
-``marginLeft: number | `${number}%```
+``marginLeft: number | `${number}%` | 'auto'``
 
 Changes:
 
@@ -1760,7 +1760,7 @@ Changes:
 
 Sets margin-right
 
-``marginRight: number | `${number}%```
+``marginRight: number | `${number}%` | 'auto'``
 
 Changes:
 
@@ -1775,7 +1775,7 @@ Changes:
 
 Sets margin-start
 
-``marginStart: number | `${number}%```
+``marginStart: number | `${number}%` | 'auto'``
 
 Changes:
 
@@ -1790,7 +1790,7 @@ Changes:
 
 Sets margin-end
 
-``marginEnd: number | `${number}%```
+``marginEnd: number | `${number}%` | 'auto'``
 
 Changes:
 
@@ -1805,7 +1805,7 @@ Changes:
 
 Sets horizontal margin (left and right)
 
-``marginHorizontal: number | `${number}%```
+``marginHorizontal: number | `${number}%` | 'auto'``
 
 Changes:
 
@@ -1820,7 +1820,7 @@ Changes:
 
 Sets vertical margin (top and bottom)
 
-``marginVertical: number | `${number}%```
+``marginVertical: number | `${number}%` | 'auto'``
 
 Changes:
 
