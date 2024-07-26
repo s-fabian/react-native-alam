@@ -129,6 +129,17 @@ export default {
     ...style,
   }),
 
+  //-n size
+  //-d Sets width and height
+  //-i size: number | `${number}%`
+  //-o width: size
+  //-o height: size
+  size: (size: number | `${number}%`, style: StyleHelp) => ({
+    width: size,
+    height: size,
+    ...style,
+  }),
+
   //-n area
   //-d Sets width & height
   //-i area: number | `${number}%`
@@ -156,6 +167,16 @@ export default {
     ...style,
   }),
 
+  //-n size-full
+  //-d Sets width and height to '100%'
+  //-o width: '100%'
+  //-o height: '100%'
+  'size-full': (_: true, style: StyleHelp) => ({
+    width: '100%',
+    height: '100%',
+    ...style,
+  }),
+
   //-n max-w
   //-d Sets maximum width
   //-i maxWidth: number | `${number}%`
@@ -174,6 +195,17 @@ export default {
     ...style,
   }),
 
+  //-n max-size
+  //-d Sets maximum width & height
+  //-i maxSize: number | `${number}%`
+  //-o maxHeight: maxSize
+  //-o maxWidth: maxSize
+  'max-size': (maxSize: number | `${number}%`, style: StyleHelp) => ({
+    maxWidth: maxSize,
+    maxHeight: maxSize,
+    ...style,
+  }),
+
   //-n min-w
   //-d Sets minimum width
   //-i minWidth: number | `${number}%`
@@ -189,6 +221,17 @@ export default {
   //-o minHeight: minHeight
   'min-h': (minHeight: number | `${number}%`, style: StyleHelp) => ({
     minHeight,
+    ...style,
+  }),
+
+  //-n min-size
+  //-d Sets minimum width & height
+  //-i minSize: number | `${number}%`
+  //-o minWidth: minSize
+  //-o minHeight: minSize
+  'min-size': (minSize: number | `${number}%`, style: StyleHelp) => ({
+    minWidth: minSize,
+    minHeight: minSize,
     ...style,
   }),
 

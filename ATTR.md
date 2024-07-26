@@ -1442,6 +1442,22 @@ Changes:
 });
 ```
 
+### size
+
+Sets width and height
+
+``size: number | `${number}%```
+
+Changes:
+
+```js
+({
+  width: size,
+  height: size,
+  ...styles,
+});
+```
+
 ### area
 
 Sets width & height
@@ -1484,6 +1500,20 @@ Changes:
 });
 ```
 
+### size-full
+
+Sets width and height to '100%'
+
+Changes:
+
+```js
+({
+  width: '100%',
+  height: '100%',
+  ...styles,
+});
+```
+
 ### max-w
 
 Sets maximum width
@@ -1514,6 +1544,22 @@ Changes:
 });
 ```
 
+### max-size
+
+Sets maximum width & height
+
+``maxSize: number | `${number}%```
+
+Changes:
+
+```js
+({
+  maxHeight: maxSize,
+  maxWidth: maxSize,
+  ...styles,
+});
+```
+
 ### min-w
 
 Sets minimum width
@@ -1540,6 +1586,22 @@ Changes:
 ```js
 ({
   minHeight: minHeight,
+  ...styles,
+});
+```
+
+### min-size
+
+Sets minimum width & height
+
+``minSize: number | `${number}%```
+
+Changes:
+
+```js
+({
+  minWidth: minSize,
+  minHeight: minSize,
   ...styles,
 });
 ```
