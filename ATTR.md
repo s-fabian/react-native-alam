@@ -1442,34 +1442,18 @@ Changes:
 });
 ```
 
-### size
+### wh
 
 Sets width and height
 
-``size: number | `${number}%```
+``wh: number | `${number}%```
 
 Changes:
 
 ```js
 ({
-  width: size,
-  height: size,
-  ...styles,
-});
-```
-
-### area
-
-Sets width & height
-
-``area: number | `${number}%```
-
-Changes:
-
-```js
-({
-  width: area,
-  height: area,
+  width: wh,
+  height: wh,
   ...styles,
 });
 ```
@@ -1500,7 +1484,7 @@ Changes:
 });
 ```
 
-### size-full
+### wh-full
 
 Sets width and height to '100%'
 
@@ -1544,7 +1528,7 @@ Changes:
 });
 ```
 
-### max-size
+### max-wh
 
 Sets maximum width & height
 
@@ -1590,7 +1574,7 @@ Changes:
 });
 ```
 
-### min-size
+### min-wh
 
 Sets minimum width & height
 

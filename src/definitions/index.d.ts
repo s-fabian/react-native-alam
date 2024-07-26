@@ -212,27 +212,25 @@ export interface DefaultProps {
   // Sets height
   h?: number | `${number}%`;
   // Sets width and height
-  size?: number | `${number}%`;
-  // Sets width & height
-  area?: number | `${number}%`;
+  wh?: number | `${number}%`;
   // Sets width to '100%'
   'w-full'?: true;
   // Sets height to '100%'
   'h-full'?: true;
   // Sets width and height to '100%'
-  'size-full'?: true;
+  'wh-full'?: true;
   // Sets maximum width
   'max-w'?: number | `${number}%`;
   // Sets maximum height
   'max-h'?: number | `${number}%`;
   // Sets maximum width & height
-  'max-size'?: number | `${number}%`;
+  'max-wh'?: number | `${number}%`;
   // Sets minimum width
   'min-w'?: number | `${number}%`;
   // Sets minimum height
   'min-h'?: number | `${number}%`;
   // Sets minimum width & height
-  'min-size'?: number | `${number}%`;
+  'min-wh'?: number | `${number}%`;
   // Sets z-index
   z?: number;
   // Sets padding for all sides
