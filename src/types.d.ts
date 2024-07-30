@@ -40,7 +40,7 @@ export type GetFn<T extends Record<string, unknown>> = {
   ) => Style;
 };
 
-export type PlatformPrefix = 'android' | 'ios';
+export type PlatformPrefix = 'android' | 'ios' | 'web';
 
 type Platform<V extends string> = `${PlatformPrefix}-${V}` | V;
 

@@ -24,7 +24,7 @@ interface StripPrefixResult {
   where?: StylePrefix;
   breakpoint?: ResponsiveUnits;
   lowerOrLesser?: 'min' | 'max';
-  platform?: 'android' | 'ios';
+  platform?: 'android' | 'ios' | 'web';
   className?: string;
 }
 
@@ -38,6 +38,7 @@ function getPrefix(from: string): StripPrefixResult | undefined {
     if (!prefix) return;
 
     switch (prefix) {
+      case 'web':
       case 'ios':
       case 'android': {
         if (result.where || result.breakpoint || result.lowerOrLesser) {
